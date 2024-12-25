@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-
-import styles from './styles.module.sass';
 import { Flex } from 'antd';
 import Link from 'next/link';
+
+import styles from './styles.module.sass';
+
 import { imagePrefix } from '@/_consts';
 
 export default function NavigationSection() {
@@ -15,6 +16,14 @@ export default function NavigationSection() {
     {
       title: 'About',
       href: '/#about',
+    },
+    {
+      title: 'Contacts',
+      href: '/#contacts',
+    },
+    {
+      title: 'Preferences',
+      href: '/#preferences',
     }
   ];
 
@@ -42,7 +51,7 @@ export default function NavigationSection() {
           />
           <div>IT CONNECT</div>
         </Flex>
-        <Flex gap={160}>{navigationButtons}</Flex>
+        <Flex gap={100}>{navigationButtons}</Flex>
       </Flex>
     </nav>
   );

@@ -1,13 +1,12 @@
 'use client';
-
 import React, { useState } from 'react';
-import { Carousel, Flex, List } from 'antd';
-
-import styles from './styles.module.sass';
+import { Carousel, Flex } from 'antd';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
 
 import { imagePrefix } from '@/_consts';
+
+import styles from './styles.module.sass';
 
 export default function AboutSection() {
   const [visible, setVisible] = useState(false);

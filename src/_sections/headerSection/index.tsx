@@ -43,7 +43,7 @@ export default function HeaderSection() {
   }, [titleComponentRef, descriptionComponentRef]);
 
   return (
-    <section className={styles.headerSection}>
+    <header className={styles.headerSection}>
       <div
         className={styles.headerSection__titleComponent}
         ref={titleComponentRef}
@@ -58,7 +58,7 @@ export default function HeaderSection() {
       <div className={styles.descriptionBlock} ref={descriptionComponentRef}>
         {descriptionText}
       </div>
-    </section>
+    </header>
 
   );
 }
