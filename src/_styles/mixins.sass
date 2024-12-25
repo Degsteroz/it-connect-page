@@ -1,0 +1,17 @@
+$primary-color: #000000 // Чёрный
+$secondary-color: #ffffff // Белый
+$accent-color: #007aff // Синий акцент Apple
+
+
+@mixin gradient-text
+  background: linear-gradient(90deg, #1E90FF, #A020F0, #FF1493)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  animation: gradientMove 3s linear infinite
+
+@keyframes gradientMove
+  from
+    background-position: 0
+
+  to
+    background-position: 100%

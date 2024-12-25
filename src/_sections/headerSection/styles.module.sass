@@ -1,0 +1,74 @@
+$color1: #1E90FF // Яркий синий
+$color2: #A020F0 // Фиолетовый
+$color3: #FF1493 // Розовый
+
+@mixin gradient-bg
+  background: linear-gradient(120deg, $color1, $color2, $color3)
+
+.headerSection
+  position: relative
+  width: 100vw
+  height: calc(100vh - 50px)
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  @include gradient-bg
+
+.descriptionBlock
+  width: 600px
+  font-size: 34px
+  margin: auto 150px auto auto
+  opacity: 0
+  transition: opacity 0.4s ease-in
+
+  &.visible
+    opacity: 1
+
+.headerSection__titleComponent
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: max-content
+  display: flex
+  flex-direction: column
+  transition: all 0.5s ease-in
+  .headerSection__title
+    line-height: 1
+    font-size: 200px
+    animation: appear 1.2s ease-in-out
+    transition: all 0.5s linear
+
+    @keyframes appear
+      from
+        opacity: 0
+        letter-spacing: 20px
+        font-size: 250px
+      to
+        opacity: 1
+        letter-spacing: initial
+        font-size: 200px
+
+
+  .headerSection__subtitle
+    line-height: 1
+    font-size: 70px
+    animation: sub_appear 1s ease-in-out
+    transition: all 0.5s linear
+
+    @keyframes sub_appear
+      from
+        opacity: 0
+        margin-top: 150px
+      to
+        opacity: 1
+        margin-top: 30px
+
+  &.finalPosition
+    left: 150px
+    transform: translate(0, -50%)
+    .headerSection__title
+      font-size: 100px
+    .headerSection__subtitle
+      font-size: 35px
+      margin-left: 0
