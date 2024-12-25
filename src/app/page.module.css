@@ -2,6 +2,7 @@
     font-family: var(--font-dm-sans);
     height: 100vh;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 .main {
     height: 200vh;

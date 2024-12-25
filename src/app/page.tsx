@@ -14,6 +14,7 @@ export default function Home() {
 
       <NavigationSection />
       <main className={styles.main}>
+        <div id="about" />
         <AboutSection />
       </main>
     </div>

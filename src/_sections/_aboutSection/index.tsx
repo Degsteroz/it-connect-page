@@ -93,13 +93,13 @@ export default function AboutSection() {
           <Image
             src={imagePrefix + logoImageUrl}
             alt="It connect logo"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             className={styles.contentBlock__logo}
           />
         </Flex>
       </Flex>
-      <InView onChange={setVisible}/>
+      <InView onChange={setVisible} className={styles.anchor}/>
     </section>
   );
 }
