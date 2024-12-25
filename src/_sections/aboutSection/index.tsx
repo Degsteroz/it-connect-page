@@ -61,7 +61,7 @@ export default function AboutSection() {
           effect="fade"
           autoplay
           adaptiveHeight
-          autoplaySpeed={7000}
+          autoplaySpeed={4000}
           dots
           style={{
             width: '640px',
