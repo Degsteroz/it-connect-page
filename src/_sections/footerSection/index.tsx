@@ -53,6 +53,7 @@ export default function FooterSection() {
         <Avatar
           size="large"
           src={imagePrefix + person.avatar}
+          alt={person.name}
         />
 
         <Flex

@@ -20,6 +20,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'IT CONNECT',
+  description: 'IT community in Belgrade'
 };
 
 export default function RootLayout({
