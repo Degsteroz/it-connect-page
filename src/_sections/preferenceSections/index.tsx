@@ -63,7 +63,8 @@ export default function PreferenceSections() {
         <Image
           src={imagePrefix + p.image}
           alt="preference"
-          fill
+          width={400}
+          height={400}
           className={styles.content__cardImage}
         />
       </div>

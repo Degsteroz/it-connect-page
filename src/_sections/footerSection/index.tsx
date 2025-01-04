@@ -23,8 +23,9 @@ const personsToConnect = [
   },
 ];
 
+const logoImageUrl ='itConnectLogoLarge';
+
 export default function FooterSection() {
-  const logoImageUrl ='itConnectLogoLarge';
 
   const contactCards = contactsArray
     .map((contact) => (
