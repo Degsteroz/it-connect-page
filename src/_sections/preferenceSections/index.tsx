@@ -4,9 +4,9 @@ import { Card, Flex } from 'antd';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
 
-import styles from './styles.module.sass';
-
 import { imagePrefix } from '@/_consts';
+
+import styles from './styles.module.sass';
 
 const preferences = [
   {
@@ -30,7 +30,6 @@ export default function PreferenceSections() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    console.log(visible);
     if (!visible) return;
     const cards = Array.from(document.getElementsByClassName(styles.content__card));
     cards.forEach((card, i) => {
@@ -73,13 +72,13 @@ export default function PreferenceSections() {
 
   return (
     <section className={styles.preferenceSection}>
+      <h2 className={styles.preferenceSectionContent__title}>
+        PREFERENCES
+      </h2>
+      <h3 className={styles.preferenceSectionContent__subtitle}>
+        Why Should You Attend Our Meetups?
+      </h3>
       <Card className={styles.preferenceSectionContent}>
-        <h2 className={styles.preferenceSectionContent__title}>
-          PREFERENCES
-        </h2>
-        <h3 className={styles.preferenceSectionContent__subtitle}>
-          Why Should You Attend Our Meetups?
-        </h3>
         <InView
           onChange={handleChangeVisibleState}
           className={styles.anchor}

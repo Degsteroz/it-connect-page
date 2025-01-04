@@ -5,24 +5,25 @@ import { LinkedinOutlined, InstagramOutlined, SendOutlined } from '@ant-design/i
 
 import styles from './styles.module.sass';
 
+export const contactsArray = [
+  {
+    title: 'Linkedin',
+    url: 'https://www.linkedin.com/company/it-connect-meetup/',
+    icon: <LinkedinOutlined />,
+  },
+  {
+    title: 'Instagram',
+    url: 'https://www.instagram.com/it.connect.belgrade/',
+    icon: <InstagramOutlined />,
+  },
+  {
+    title: 'Telegram',
+    url: 'https://t.me/itconnectbelgrade',
+    icon: <SendOutlined />
+  }
+];
+
 export default function ContactSection() {
-  const contactsArray = [
-    {
-      title: 'Linkedin',
-      url: 'https://www.linkedin.com/company/it-connect-meetup/',
-      icon: <LinkedinOutlined />,
-    },
-    {
-      title: 'Instagram',
-      url: 'https://www.instagram.com/it.connect.belgrade/',
-      icon: <InstagramOutlined />,
-    },
-    {
-      title: 'Telegram',
-      url: 'https://t.me/itconnectbelgrade',
-      icon: <SendOutlined />
-    }
-  ];
 
   const contactCards = contactsArray
     .map((contact) => (

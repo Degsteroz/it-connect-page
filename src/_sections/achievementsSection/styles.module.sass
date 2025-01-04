@@ -1,0 +1,32 @@
+@import '../../_styles/mixins'
+
+.achievementsSection
+  width: 100vw
+  padding: 30px
+  display: flex
+  flex-direction: column
+  background: white
+  color: $primary-color
+  position: relative
+
+  & :global(.ant-collapse-header-text)
+    font-size: 24px
+
+.achievementsSectionContent__title
+  font-size: $title-font-size
+  line-height: 1
+  text-transform: uppercase
+
+.achievementsSectionContent__subtitle
+  font-size: 24px
+  margin-bottom: 20px
+
+.description
+  font-size: 20px
+  padding-left: 25px
+
+.anchor
+  position: absolute
+  top: 50%
+  height: 100px
+  width: 100px

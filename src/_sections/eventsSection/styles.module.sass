@@ -1,0 +1,59 @@
+@import "../../_styles/mixins"
+.eventsSection
+  width: 100vw
+  height: 100vh
+  background: $greyBackground
+  overflow: hidden
+  padding: 30px 0
+  .sectionHeader
+    font-size: $title-font-size
+    color: #0a0a0a
+    padding-left: 30px
+    margin-bottom: 20px
+  .eventsWrapper
+    width: 100%
+    display: flex
+    overflow: scroll
+    gap: 5vmin
+    padding: 0 2vw 0 10vw
+    .eventCard
+      width: 400px
+      height: 511px
+      border: none
+      border-radius: 12px
+      overflow: hidden
+      display: flex
+      align-items: center
+      flex: 0 0 600px
+      img
+        transition: all 0.3s ease-in-out
+      &:hover
+        img
+          transform: scale(0.85)
+
+    .eventCard__preview
+      display: flex
+      flex-direction: column
+      writing-mode: vertical-rl
+      color: #0a0a0a
+      height: 400px
+      font-size: 4.5vmin
+      padding: 20px 0
+
+      .date
+        font-size: 3vmin
+        display: flex
+        gap: 1vmin
+        align-items: center
+
+.modal
+  max-width: 845px
+  top: 5vh
+  & :global(.ant-modal-content)
+    display: flex
+    flex-direction: column
+    padding: 10px 24px
+    & :global(.ant-modal-close)
+      border-radius: 50%
+      background: $primary-color
+      color: white

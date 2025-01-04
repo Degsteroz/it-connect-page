@@ -15,9 +15,15 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'disk.yandex.ru',
+        hostname: 'it-conect.notion.site',
         port: '',
-        pathname: '/d/OWOnQLB3EZH14g/full/**',
+        pathname: '/image/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.notionusercontent.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },
