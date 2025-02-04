@@ -1,6 +1,6 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import { Collapse, Flex, CollapseProps } from 'antd';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Flex, Card } from 'antd';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
 
@@ -27,7 +27,7 @@ const achievements = [
 ];
 
 export default function AchievementsSection() {
-  const [currentIndex, setCurrentIndex] = useState<string>('0');
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [inView, setInView] = useState<boolean>(false);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -37,21 +37,30 @@ export default function AchievementsSection() {
     imageRef.current.style.opacity = '1';
   }, [currentIndex]);
 
-  const items: CollapseProps['items'] = achievements.map((p, index) => ({
-    label: p.title,
-    key: String(index),
-    children: <div className={styles.description}>{p.description}</div>
-  }));
-
-  const handleChange = (value: string[]) => {
-    if (!value?.length || value[0] === currentIndex) return;
+  const handleChange = useCallback((index: number) => {
+    if (currentIndex === index) return;
     if (imageRef.current) {
       imageRef.current.style.opacity = '0';
     }
     setTimeout(() => {
-      setCurrentIndex(value[0]);
-    }, 300);
-  };
+      setCurrentIndex(index);
+    }, 200);
+  }, [currentIndex, imageRef.current]);
+
+  const items = achievements.map(
+    (p, index) => {
+      return (
+        <Card
+          key={p.image}
+          title={p.title}
+          hoverable
+          onMouseEnter={() => handleChange(index)}
+        >
+          {p.description}
+        </Card>
+      );
+    }
+  );
 
   return (
     <section className={styles.achievementsSection}>
@@ -69,20 +78,11 @@ export default function AchievementsSection() {
 
       <Flex
         gap={30}
-        align={'flex-start'}
+        align={'center'}
       >
-        <Collapse
-          defaultActiveKey={0}
-          accordion
-          ghost
-          onChange={handleChange}
-          items={items}
-          size="large"
-          style={{
-            flex: '1 0 60%',
-            height: 'fit-content'
-          }}
-        />
+        <Flex gap={10} align={'flex-start'}>
+          {items}
+        </Flex>
 
         <Image
           src={imagePrefix + achievements[Number(currentIndex) || 0].image}

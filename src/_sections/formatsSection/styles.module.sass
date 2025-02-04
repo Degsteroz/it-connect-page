@@ -1,0 +1,31 @@
+@import "../../_styles/mixins"
+
+.formatsSection
+  display: flex
+  flex-direction: column
+  padding: 30px
+  background: $greyBackground
+  width: 100vw
+
+.formatsSection__header
+  font-size: $title-font-size
+  color: #0a0a0a
+  margin-bottom: 20px
+
+.tabComponent
+  display: flex
+  width: fit-content
+  gap: 5px
+  background: white
+  border-radius: 18px
+  padding: 5px
+  margin-bottom: 20px
+  .tabButton
+    padding: 3px 5px
+    border-radius: 15px
+    background: white
+    transition: all 0.3s ease
+    cursor: default
+    &.--active
+      background: #0a0a0a
+      color: white

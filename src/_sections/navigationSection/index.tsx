@@ -5,8 +5,7 @@ import { Flex } from 'antd';
 import Link from 'next/link';
 
 import styles from './styles.module.sass';
-
-import { imagePrefix } from '@/_consts';
+import logo from '@/_assets/logo.svg';
 
 import { contactsArray } from '@/_sections/contactsSection';
 
@@ -33,12 +32,20 @@ const navigationLinks: NavigationLinkType[] = [
     id: 'preferences',
   },
   {
+    title: 'Formats',
+    id: 'formats',
+  },
+  {
     title: 'Events',
     id: 'events',
   },
   {
     title: 'Achievements',
     id: 'achievements',
+  },
+  {
+    title: 'Partners',
+    id: 'partners',
   },
   {
     title: 'Team',
@@ -68,8 +75,6 @@ export default function NavigationSection() {
     </div>
   ));
 
-  const iconUrl = imagePrefix + 'logo_ITCONNECT_btvs83.webp';
-
   const contactCards = contactsArray
     .map((contact) => (
       <Link
@@ -86,12 +91,11 @@ export default function NavigationSection() {
       <Flex align="center" justify="space-between">
         <Flex align="center" gap={10}>
           <Image
-            src={iconUrl}
+            src={logo}
             alt="Logo"
-            width={40}
-            height={40}
+            width={200}
+            height={30}
           />
-          <div>IT CONNECT</div>
         </Flex>
         <Flex gap={40}>{navigationButtons}</Flex>
         <Flex align="center" gap={10}>

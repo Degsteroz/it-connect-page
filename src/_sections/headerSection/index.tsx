@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
+
+import logo from '@/_assets/logo.svg';
 import styles from './styles.module.sass';
 
 export default function HeaderSection() {
@@ -49,7 +52,7 @@ export default function HeaderSection() {
         ref={titleComponentRef}
       >
         <h1 className={styles.headerSection__title}>
-          IT CONNECT
+          <Image src={logo} alt="logo" layout="fill" />
         </h1>
         <h2 className={styles.headerSection__subtitle}>
           IT community in Belgrade

@@ -96,7 +96,7 @@ export default function EventsSection() {
   return (
     <section className={styles.eventsSection}>
       <h2 className={styles.sectionHeader}>EVENTS</h2>
-      <div className={styles.eventsWrapper} id="eventsWrapper">
+      <div className={styles.eventsWrapper}>
         {eventsComponents}
       </div>
 

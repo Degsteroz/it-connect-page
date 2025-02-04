@@ -11,6 +11,8 @@ import TeamSection from '@/_sections/teamSection';
 import FooterSection from '@/_sections/footerSection';
 
 import styles from './page.module.css';
+import FormatsSection from '@/_sections/formatsSection';
+import PartnersSection from '@/_sections/partnersSection';
 
 export default function Home() {
   return (
@@ -20,7 +22,6 @@ export default function Home() {
     >
       <div id="home"/>
       <HeaderSection/>
-
       <NavigationSection/>
 
       <main>
@@ -30,15 +31,19 @@ export default function Home() {
         <ContactSection/>
         <div id="preferences"/>
         <PreferenceSections/>
+        <div id="formats"/>
+        <FormatsSection/>
         <div id="events"/>
         <EventsSection/>
         <div id="achievements"/>
         <AchievementsSection/>
+        <div id="partners"/>
+        <PartnersSection/>
         <div id="team"/>
         <TeamSection/>
       </main>
 
-      <FooterSection />
+      <FooterSection/>
     </div>
   );
 }
