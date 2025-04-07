@@ -1,0 +1,88 @@
+.impactSection
+  width: 100%
+  max-width: 1312px
+  margin: 96px auto
+  background-color: #222222
+  border-radius: 40px
+  height: 396px
+
+.content
+  display: flex
+  flex-direction: column
+  padding: 48px 45px
+  height: 100%
+  width: 100%
+  color: #E4E4E4
+
+
+.titleBlock
+  width: 600px
+  margin: 0 auto 16px
+  position: relative
+  .title
+    position: relative
+    font-size: 40px
+    text-align: center
+    margin-bottom: 16px
+    z-index: 3
+    font-weight: 700
+
+  .subtitle
+    font-size: 28px
+    text-align: center
+
+  &::before
+    content: ""
+    width: 600px
+    height: 60px
+    background-color: #7030A0
+    position: absolute
+    top: -5px
+    left: 50%
+    transform: translate(-50%, 0) rotate(-1.7deg)
+    z-index: 1
+    border-radius: 16px
+
+.statsTitle
+  font-size: 32px
+  text-align: center
+  margin-bottom: 16px
+
+.statsWrapper
+  display: flex
+  justify-content: space-between
+
+  .statComponent
+    display: flex
+    flex-direction: column
+    gap: 16px
+    flex: 0 0 285px
+    align-items: center
+    .text
+      font-weight: 400
+      font-size: 24px
+      line-height: 28px
+    .counterComponent
+      width: 213px
+      height: 68px
+      overflow: hidden
+      color: #00D6E6
+      font-size: 68px
+      font-weight: 700
+      line-height: 68px
+      text-align: center
+      position: relative
+      .countersWrapper
+        display: flex
+        flex-direction: column
+        gap: 5px
+        position: absolute
+        top: 0
+        transition: top 1.5s ease-in-out
+
+      .counter
+        width: 213px
+        height: 68px
+
+
+

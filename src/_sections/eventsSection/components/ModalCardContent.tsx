@@ -31,13 +31,6 @@ export default function ModalCardContent({ event }: {event: Meetup | Network | n
               : 'Networking'
           }
         </Tag>
-
-        <Link
-          href={event.link}
-          target="_blank"
-        >
-          Photo album
-        </Link>
       </div>
       <Image
         className={styles.content__image}
@@ -119,6 +112,17 @@ export default function ModalCardContent({ event }: {event: Meetup | Network | n
           />
         </>
       )}
+      <Link
+        href={event.link}
+        target="_blank"
+        style={{
+          marginTop: '20px',
+          fontWeight: 'bold',
+          fontSize: '24px',
+        }}
+      >
+        Photo album
+      </Link>
     </Flex>
   );
 }

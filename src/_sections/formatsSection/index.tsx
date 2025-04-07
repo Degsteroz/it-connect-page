@@ -1,44 +1,57 @@
 'use client';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
+import { Card, Modal } from 'antd';
+import Image from 'next/image';
 
 import { data } from './data';
 import EventTypeCard from './components/EventTypeCard';
 
 import styles from './styles.module.sass';
-import ImageBar from '@/_sections/formatsSection/components/ImageBar';
 
 export default function FormatSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const imageBlock = useMemo(() => <ImageBar />, []);
-
-  const tabsButtons = useMemo(() => {
-    return data.map((item, index) => {
-      const buttonClassName = `${styles.tabButton} ${activeIndex === index ? styles['--active'] : ''}`;
-      return (
-        <div
-          key={item.title}
-          onClick={() => setActiveIndex(index)}
-          className={buttonClassName}
-        >
-          {item.title}
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const formatsComponents = data.map((format, index) => {
+    return (
+      <Card
+        bordered={false}
+        key={format.title}
+        className={styles.formatCard}
+        hoverable
+        onClick={() => setActiveIndex(index)}
+      >
+        <Image
+          src={format.photo}
+          alt=""
+          width={368}
+          height={246}
+          className={styles.image}
+        />
+        <div className={styles.cardTextBlock}>
+          <h4 className={styles.cardTitle}>
+            {format.title}
+          </h4>
+          <div className={styles.cardDescription}>
+            {format.shortDescription}
+          </div>
         </div>
-      );
-    });
-  }, [data, activeIndex]);
+
+      </Card>
+    );
+  });
 
   return (
     <section className={styles.formatsSection}>
-      <h1 className={styles.formatsSection__header}>
-        OUR FORMATS
-      </h1>
+      {formatsComponents}
 
-      <div className={styles.tabComponent}>
-        {tabsButtons}
-      </div>
-
-      <EventTypeCard eventType={data[activeIndex]} />
-      {imageBlock}
+      <Modal
+        open={activeIndex !== null}
+        onCancel={() => setActiveIndex(null)}
+        width={'fit-content'}
+        footer={false}
+        className={styles.modal}
+      >
+        <EventTypeCard eventType={data[activeIndex || 0]} />
+      </Modal>
     </section>
   );
 };

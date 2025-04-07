@@ -5,6 +5,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  env: {
+    API_KEY: process.env.API_KEY,
+    AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    PROJECT_ID: process.env.PROJECT_ID,
+    STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+    MESSAGIND_ID: process.env.MESSAGIND_ID,
+    APP_ID: process.env.APP_ID,
+    MEASUREMENT_ID: process.env.MEASUREMENT_ID,
+    CLOUD_NAME: process.env.CLOUD_NAME,
+    UPLOAD_PRESET: process.env.UPLOAD_PRESET,
+    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+  },
   images: {
     remotePatterns: [
       {

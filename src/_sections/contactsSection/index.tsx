@@ -1,7 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Flex } from 'antd';
-import { LinkedinOutlined, InstagramOutlined, SendOutlined } from '@ant-design/icons';
+import { Flex } from 'antd';
+import Image from 'next/image';
+
+import telegramIcon from '@/_assets/telegramIcon.svg';
+import linkedinIcon from '@/_assets/linkedinIcon.svg';
+import instagramIcon from '@/_assets/instagramIcon.svg';
 
 import styles from './styles.module.sass';
 
@@ -9,22 +13,23 @@ export const contactsArray = [
   {
     title: 'Linkedin',
     url: 'https://www.linkedin.com/company/it-connect-meetup/',
-    icon: <LinkedinOutlined />,
+    icon: linkedinIcon
   },
   {
     title: 'Instagram',
     url: 'https://www.instagram.com/it.connect.belgrade/',
-    icon: <InstagramOutlined />,
+    icon: instagramIcon,
   },
   {
     title: 'Telegram',
     url: 'https://t.me/itconnectbelgrade',
-    icon: <SendOutlined />
+    icon: telegramIcon
   }
 ];
 
-export default function ContactSection() {
+const descriptionText = 'Partner with us to connect with top tech talent through events, social media, and custom collaborations.';
 
+export default function ContactSection() {
   const contactCards = contactsArray
     .map((contact) => (
       <Link
@@ -32,25 +37,30 @@ export default function ContactSection() {
         target="_blank"
         key={contact.title}
       >
-        <Card
-          className={styles.contactCard}
-        >
-          {contact.icon}
-          <div className={styles.contactCard__title}>
-            {contact.title}
-          </div>
-        </Card>
+        <Image
+          src={contact.icon}
+          alt={contact.title}
+          width={37}
+          height={37}
+        />
       </Link>
     ));
 
   return (
     <section className={styles.contactsSection}>
-      <h2 className={styles.contactsSection__title}>
-        CONTACT US
-      </h2>
+      <Flex vertical style={{ width: '596px' }}>
+        <div className={styles.title}>📩 Let’s Collaborate!</div>
+        <div className={styles.description}>
+          {descriptionText}
+        </div>
+      </Flex>
       <Flex gap={40}>
         {contactCards}
       </Flex>
+
+      <button className={styles.button}>
+        Connect
+      </button>
     </section>
   );
 }

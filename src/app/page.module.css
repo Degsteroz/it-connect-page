@@ -1,6 +1,15 @@
 .page {
-    font-family: var(--font-dm-sans);
-    height: 100vh;
-    overflow-y: scroll;
+    font-family: var(--font-onest);
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: fit-content;
+    width: 100vw;
+    .centered {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 }

@@ -1,0 +1,43 @@
+.signSection
+  width: 100%
+  max-width: 1312px
+  margin: 0 auto 96px
+  background-color: #222222
+  border-radius: 40px
+  height: 367px
+
+.content
+  display: flex
+  flex-direction: column
+  padding: 48px 45px
+  height: 100%
+  width: 100%
+  color: #E4E4E4
+
+
+.titleBlock
+  margin: 0 auto 40px
+  position: relative
+  .title
+    position: relative
+    font-size: 40px
+    text-align: center
+    margin-bottom: 16px
+    z-index: 3
+    font-weight: 700
+
+  .subtitle
+    font-size: 28px
+    text-align: center
+
+  &::before
+    content: ""
+    width: 397px
+    height: 60px
+    background-color: #7030A0
+    position: absolute
+    top: -5px
+    left: 50%
+    transform: translate(-50%, 0) rotate(-1.7deg)
+    z-index: 1
+    border-radius: 16px

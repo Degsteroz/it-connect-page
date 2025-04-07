@@ -1,77 +1,73 @@
-$color1: #1E90FF // Яркий синий
-$color2: #A020F0 // Фиолетовый
-$color3: #FF1493 // Розовый
-
-@mixin gradient-bg
-  background: linear-gradient(120deg, $color1, $color2, $color3)
-
 .headerSection
   position: relative
-  width: 100vw
-  height: calc(100vh - 50px)
+  width: 1392px
+  margin: 0 auto 96px auto
+  border-radius: 0 0 120px 120px
   overflow: hidden
   display: flex
-  flex-direction: column
-  @include gradient-bg
+  background: #3F195B
   color: white
+  padding: 69px 45px 69px 115px
+  perspective: 1000px
 
-.descriptionBlock
-  width: 600px
-  font-size: 34px
-  margin: auto 100px auto auto
-  opacity: 0
-  transition: opacity 0.4s ease-in
-
-  &.visible
-    opacity: 1
-
-.headerSection__titleComponent
+.headerSection__logo
   position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  width: max-content
+  left: 0
+  top: 0
+
+.headerSection__contentWrapper
+  position: relative
   display: flex
-  flex-direction: column
-  transition: all 0.5s ease-in
-  .headerSection__title
-    line-height: 1
-    width: 500px
-    height: 200px
-    animation: appear 1.2s ease-in-out
-    transition: all 0.5s linear
+  justify-content: space-between
+  width: 100%
 
-    @keyframes appear
-      from
-        opacity: 0
-        width: 700px
-        height: 260px
-      to
-        opacity: 1
-        width: 500px
-        height: 200px
+  .imageBlock
+    position: relative
+    .figure1,
+    .figure2,
+    .figure3
+      transition: transform 0.2s ease-out
+      transform-style: preserve-3d
+      will-change: transform
 
+    .figure1
+      position: absolute
+      top: 220px
+      right: -40px
+      z-index: 4
+    .figure2
+      position: absolute
+      bottom: 60px
+      left: -30px
+      z-index: 4
+    .figure3
+      position: absolute
+      top: -50px
+      left: -60px
+      z-index: 0
+      transform: rotate(20deg)
 
-  .headerSection__subtitle
-    line-height: 1
-    font-size: 70px
-    animation: sub_appear 1s ease-in-out
-    transition: all 0.5s linear
+  .textBlock
+    position: relative
+    width: 579px
+    height: 220px
+    margin-top: 100px
+    display: flex
+    flex-direction: column
 
-    @keyframes sub_appear
-      from
-        opacity: 0
-        margin-top: 150px
-      to
-        opacity: 1
-        margin-top: 30px
+    .textBlock__description
+      font-size: 20px
+      line-height: 26px
+      width: 90%
+      margin: 24px 0 0 20px
 
-  &.finalPosition
-    left: 100px
-    transform: translate(0, -50%)
-    .headerSection__title
-      width: 300px
-      height: 120px
-    .headerSection__subtitle
-      font-size: 35px
-      margin-left: 0
+    .rectangle
+      position: absolute
+      top: 95px
+      z-index: 0
+      left: -4px
+      width: 380px
+      height: 80px
+      border-radius: 16px
+      background: #7030A0
+      transform: rotate(-2deg)

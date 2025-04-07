@@ -1,13 +1,13 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
 import { Flex } from 'antd';
 import Link from 'next/link';
-
-import styles from './styles.module.sass';
-import logo from '@/_assets/logo.svg';
+import Image from 'next/image';
 
 import { contactsArray } from '@/_sections/contactsSection';
+import Logo from '@/_assets/logo';
+
+import styles from './styles.module.sass';
 
 type NavigationLinkType = {
   title: string;
@@ -16,54 +16,60 @@ type NavigationLinkType = {
 
 const navigationLinks: NavigationLinkType[] = [
   {
-    title: 'Home',
-    id: 'home',
-  },
-  {
-    title: 'About',
-    id: 'about',
-  },
-  {
-    title: 'Contacts',
-    id: 'contacts',
-  },
-  {
-    title: 'Preferences',
-    id: 'preferences',
-  },
-  {
-    title: 'Formats',
-    id: 'formats',
+    title: 'Closest event',
+    id: 'closest-event',
   },
   {
     title: 'Events',
     id: 'events',
   },
   {
-    title: 'Achievements',
-    id: 'achievements',
+    title: 'Formats',
+    id: 'formats',
   },
   {
-    title: 'Partners',
-    id: 'partners',
+    title: 'Sponsorship',
+    id: 'sponsorship',
   },
   {
     title: 'Team',
     id: 'team',
   },
+  {
+    title: 'Contacts',
+    id: 'contacts',
+  },
 ];
 
 export default function NavigationSection() {
+  const [color, setColor] = useState<string>('white');
+  const navigationHeaderRef = useRef<HTMLDivElement>(null);
   const handleLinkClick = (link: NavigationLinkType) => {
+    const homePageComponent = document.getElementById('homePage');
     const anchor = document.getElementById(link.id);
-    const homePage = document.getElementById('homePage');
 
-    if (!anchor || !homePage) return;
+    if (!anchor || !homePageComponent) return;
 
     const top = anchor.offsetTop;
 
-    homePage.scrollTo({ top: top - 50, behavior: 'smooth' });
+    homePageComponent.scrollTo({ top: top - 80, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const homePageComponent = document.getElementById('homePage');
+    if (!homePageComponent) return;
+
+    const changeHeaderStyles = () => {
+      if (!navigationHeaderRef.current) return;
+      const isScrolled = !!homePageComponent.scrollTop;
+
+      navigationHeaderRef.current.style.background = isScrolled ? 'white' : 'transparent';
+
+      setColor(isScrolled ? 'black' : 'white');
+    };
+
+    homePageComponent.addEventListener('scroll', changeHeaderStyles);
+  }, [navigationHeaderRef]);
 
   const navigationButtons = navigationLinks.map((link) => (
     <div
@@ -82,26 +88,40 @@ export default function NavigationSection() {
         target="_blank"
         key={contact.title}
       >
-        {contact.icon}
+        <Image src={contact.icon} alt="contact" width={32} height={32} />
       </Link>
     ));
 
   return (
-    <nav className={styles.navigationSection}>
-      <Flex align="center" justify="space-between">
-        <Flex align="center" gap={10}>
-          <Image
-            src={logo}
-            alt="Logo"
-            width={200}
-            height={30}
-          />
+    <nav className={styles.navigationSection} ref={navigationHeaderRef}>
+      <div
+        className={styles.content}
+      >
+        <Flex
+          align="center"
+          justify="space-between"
+          style={{
+            transition: 'background 0.3s ease-in-out',
+            padding: '21px 89px',
+            width: '100%',
+            color: `${color}`
+          }}
+        >
+          <Flex align="center" gap={318}>
+            <Logo
+              color={color}
+              width={200}
+              height={30}
+            />
+          </Flex>
+          <Flex align="center" gap={43}>
+            <Flex gap={32}>{navigationButtons}</Flex>
+            <Flex align="center" gap={10}>
+              {contactCards}
+            </Flex>
+          </Flex>
         </Flex>
-        <Flex gap={40}>{navigationButtons}</Flex>
-        <Flex align="center" gap={10}>
-          {contactCards}
-        </Flex>
-      </Flex>
+      </div>
     </nav>
   );
 }

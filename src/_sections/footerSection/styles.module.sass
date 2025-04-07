@@ -1,18 +1,23 @@
-@import '../../_styles/mixins'
-$color1: #1E90FF // Яркий синий
-$color2: #A020F0 // Фиолетовый
-$color3: #FF1493 // Розовый
-
 .footerSection
   width: 100vw
-  height: 500px
-  background: linear-gradient(180deg, white, $color1, $color2)
+  background: #222222
   display: flex
   position: relative
+  padding: 80px 140px
 
 .footerSection__content
-  width: 80vw
-  margin: 150px auto 30px auto
   color: white
   display: flex
-  flex-direction: column
+  width: 100%
+
+  .firstBlock
+    opacity: 0.6
+    margin-right: 120px
+  .linksBlock
+    .linksBlockTitle
+      font-size: 20px
+
+  .connectBlock
+    font-family: var(--font-poppins)
+    font-size: 28px
+    margin-left: auto

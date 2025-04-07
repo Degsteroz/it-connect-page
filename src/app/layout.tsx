@@ -1,21 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Exo_2, Geist_Mono, DM_Sans } from 'next/font/google';
+import { Onest, Poppins } from 'next/font/google';
 import './globals.css';
 
-const exo2Sans = Exo_2({
-  variable: '--font-exo2-sans',
+const onest = Onest({
+  variable: '--font-onest',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const poppins = Poppins({
+  variable: '--font-poppins',
   subsets: ['latin'],
-});
-
-const dmSans = DM_Sans({
-  variable: '--font-dm-sans',
-  subsets: ['latin'],
+  weight: ['500', '700'],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${exo2Sans.variable} ${geistMono.variable} ${dmSans.variable}`}>
+      <body className={`${onest.variable} ${poppins.variable}`} id="homePage">
         {children}
       </body>
     </html>

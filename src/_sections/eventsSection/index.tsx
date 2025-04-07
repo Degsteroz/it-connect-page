@@ -1,10 +1,8 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import {
-  Card,
   Flex,
-  Space,
   Tag,
   Modal,
 } from 'antd';
@@ -16,86 +14,94 @@ import ModalCardContent from './components/ModalCardContent';
 import styles from './styles.module.sass';
 
 export default function EventsSection() {
-  const [cardIndex, setCardIndex] = React.useState<number | null>(null);
+  const [cardIndex, setCardIndex] = useState<number | null>(null);
+  const [sortValue, setSortValue] = useState<EventsTypes | null>(null);
 
-  useEffect(() => {
-    if (cardIndex === null) return;
+  const eventsComponents = [...events]
+    .sort((a, b) => {
+      if (!sortValue) return 1;
 
-    const currentCard = document.getElementById('events-' + cardIndex);
-    if (!currentCard) return;
+      return Number(b._type === sortValue) - Number(a._type === sortValue);
+    })
+    .map((event, index) => {
+      const isActive = index === cardIndex;
+      const handleCardClick = () => {
+        setCardIndex(isActive ? null : index);
+      };
 
-    setTimeout(() => {
-      currentCard.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'start',
-      });
-    }, 100);
-
-  }, [cardIndex]);
-
-  const eventsComponents = events.map((event, index) => {
-    const isActive = index === cardIndex;
-    const eventId = `events-${index}`;
-
-    const handleCardClick = () => {
-      setCardIndex(isActive ? null : index);
-    };
-
-    const isEvent = event._type === EventsTypes.MEETUP;
-
-    return (
-      <Space
-        key={event.image}
-        style={{
-          height: '511px',
-          gap: 0
-        }}
-        id={eventId}
-      >
-        <div className={styles.eventCard__preview}>
-          {event.title}
-          <div className={styles.date}>
-            {event.date}
-            <Tag
-              color={isEvent ? 'blue' : 'green'}
-              style={{
-                width: '23px'
-              }}
-            >
-              { isEvent ? 'Event': 'Networking'}
-            </Tag>
+      const isEvent = event._type === EventsTypes.MEETUP;
+      const tags = event.tags.slice(0, 2).map(tag => {
+        const key = `${event.title}-${tag}`;
+        return (
+          <div
+            key={key}
+            className={styles.tag}
+          >
+            {tag}
           </div>
-        </div>
+        );
+      });
 
-        <Card
-          hoverable
+      return (
+        <Flex
+          key={event.image}
           className={styles.eventCard}
-          styles={{
-            body: {
-              padding: 0,
-              width: '100%',
-            }
-          }}
+          align="flex-start"
+          vertical
           onClick={handleCardClick}
-        >
-          <Flex justify={'center'}>
-            <Image
-              src={event.image}
-              width="1024"
-              height="683"
-              alt=""
-            />
-          </Flex>
-        </Card>
-      </Space>
 
-    );
-  });
+        >
+          <Image
+            style={{
+              borderRadius: '16px'
+            }}
+            src={event.image}
+            className={styles.image}
+            width="302"
+            height="200"
+            alt=""
+          />
+          <div className={styles.eventCard__preview}>
+            <div className={styles.date}>
+              <div>{event.date}</div>
+              <div className={styles.tagsWrapper}>
+                {tags}
+                {event.tags.length - 2 > 0 && (
+                  <div className={styles.tag}>
+                    +{event.tags.length - 2} more
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={styles.title}>{event.title}</div>
+            <div style={{ marginTop: 'auto' }}>
+              <Tag
+                color={isEvent ? 'blue' : 'green'}
+                style={{
+                  width: 'fit-content',
+                  marginTop: 'auto',
+                  cursor: 'pointer',
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setSortValue(
+                    sortValue === event._type
+                      ? null
+                      : event._type
+                  );
+                }}
+              >
+                {isEvent ? 'Event' : 'Networking'}
+              </Tag>
+            </div>
+          </div>
+        </Flex>
+      );
+    });
 
   return (
     <section className={styles.eventsSection}>
-      <h2 className={styles.sectionHeader}>EVENTS</h2>
       <div className={styles.eventsWrapper}>
         {eventsComponents}
       </div>

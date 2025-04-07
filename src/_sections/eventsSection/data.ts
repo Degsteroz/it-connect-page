@@ -1,6 +1,6 @@
 export enum EventsTypes {
-  MEETUP,
-  NETWORK,
+  MEETUP = 'MEETUP',
+  NETWORK = 'NETWORK',
 }
 
 export type Meetup = {
@@ -17,6 +17,7 @@ export type Meetup = {
   _type: EventsTypes.MEETUP
   image: string
   link: string
+  tags: string[]
 }
 
 export type Network = {
@@ -26,6 +27,7 @@ export type Network = {
   _type: EventsTypes.NETWORK;
   image: string;
   link: string;
+  tags: string[]
 }
 
 export const events: (Meetup | Network)[] = [
@@ -38,6 +40,7 @@ export const events: (Meetup | Network)[] = [
       participants: 68,
       duration: 4
     },
+    tags: ['AI', 'meetup', 'IT Connect'],
     topicList: [
       'Three inspiring talks on AI',
       'Group networking sessions',
@@ -56,6 +59,7 @@ export const events: (Meetup | Network)[] = [
       participants: 65,
       duration: 3
     },
+    tags: [],
     topicList: [
       'Common Sense Software Architecture Diagramming',
       '3 Timeless Tips on Starting a Business, Personal Development, and Wealth',
@@ -73,6 +77,7 @@ export const events: (Meetup | Network)[] = [
       participants: 80,
       duration: 5
     },
+    tags: [],
     topicList: [
       'Distributed SQL Databases as a Remedy for Regrets',
       'Clean Architecture in Client Applications',
@@ -91,6 +96,7 @@ export const events: (Meetup | Network)[] = [
       participants: 65,
       duration: 4
     },
+    tags: [],
     topicList: [
       'How to Properly Estimate Tasks in Projects: Hours or Story Points?',
       'How to Write a Project Summary',
@@ -107,6 +113,7 @@ export const events: (Meetup | Network)[] = [
       'What an incredible day! Our party, brought to life by the collaboration between CIDER.RS, IT Connect, and DVA MEDVEDA, was an absolute blast with 145 people joining in on the fun!',
       'We cranked up the energy this time with even more activities: Twister, an upgraded Bingo, insight games, Limbo, and a mix of logic and endurance challenges.'
     ],
+    tags: [],
     link: 'https://disk.yandex.ru/d/10Xo0aC9CkViDQ',
     _type: EventsTypes.NETWORK,
     image: 'https://it-conect.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2F5fe31921-a30b-44e0-9b7b-c11872145251%2FDSC_4877_(2).jpg?table=block&id=cf4fa347-c934-484a-9e20-1b1170abc543&spaceId=ba98bd55-74f8-46aa-a976-7248c0b8b835&width=1200&userId=&cache=v2'
@@ -114,6 +121,7 @@ export const events: (Meetup | Network)[] = [
   {
     title: 'IT SUMMER FEST',
     date: '06.07.2024',
+    tags: [],
     description: [
       'We brought together 245 attendees, setting a new record for our community!',
       'Hosted 8 talks and 5 pitch presentations. We\'re working on the recordings and will share them soon.',
@@ -133,6 +141,7 @@ export const events: (Meetup | Network)[] = [
       participants: 64,
       duration: 6
     },
+    tags: [],
     description: [
       'Developed a fun game for all attendees. The main idea was to assist people and add some activity to break the ice.',
       'IT StandUps about mishaps in work, sharing amusing work-related anecdotes.',
@@ -149,6 +158,7 @@ export const events: (Meetup | Network)[] = [
       'We hosted around 100 people throughout the day, creating a space for an epic Saturday chill session: water guns, beer pong, bingo, Jenga, a fire show, live DJ music, and, of course, amazing drinks and grill.',
       '11 hours of live interaction, entertainment, and bright moments!',
     ],
+    tags: [],
     link: 'https://photos.app.goo.gl/7gs4oNXEXexUFiWj7',
     _type: EventsTypes.NETWORK,
     image: 'https://it-conect.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2Fedda1274-48f5-4c19-8c8a-92b42f9819e4%2Fphoto_2024-06-30_18-10-39_(1).jpg?table=block&id=1605addd-450c-801f-a52a-c7570cedb2bc&spaceId=ba98bd55-74f8-46aa-a976-7248c0b8b835&width=1200&userId=&cache=v2'
@@ -162,6 +172,7 @@ export const events: (Meetup | Network)[] = [
       participants: 61,
       duration: 4
     },
+    tags: [],
     topicList: [
       'How to quickly integrate into a new team and become one of them.',
       'Use the outsource companies as a springboard to a Senior position.',
@@ -180,6 +191,7 @@ export const events: (Meetup | Network)[] = [
       participants: 56,
       duration: 4
     },
+    tags: [],
     topicList: [
       'How to level up LinkedIn without mentors and ChatGPT.',
       'Why we fail to complete tasks/projects and how to deal with it.',
@@ -198,6 +210,7 @@ export const events: (Meetup | Network)[] = [
       participants: 42,
       duration: 3.5
     },
+    tags: [],
     topicList: [
       'How to test your business idea for pennies.',
       'FuckUp Nights',
@@ -206,7 +219,7 @@ export const events: (Meetup | Network)[] = [
     ],
     link: 'https://photos.app.goo.gl/5vYuSqmtt4WakTfP7',
     _type: EventsTypes.MEETUP,
-    image: 'https://it-conect.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2Fae503027-e045-4b79-a978-7fb027cf798d%2FIMG_2273.jpg?table=block&id=c0453989-cac6-4de4-bb26-03bec326a321&spaceId=ba98bd55-74f8-46aa-a976-7248c0b8b835&width=1200&userId=&cache=v2'
+    image: 'https://it-conect.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2Fae503027-e045-4b79-a978-7fb027cf798d%2FIMG_2273.jpg?table=block&id=1705addd-450c-8002-bac5-d4de0e0e0b57&spaceId=ba98bd55-74f8-46aa-a976-7248c0b8b835&width=730&userId=&cache=v2'
   },
   {
     title: 'Soft Skills 2.0',
@@ -217,6 +230,7 @@ export const events: (Meetup | Network)[] = [
       participants: 47,
       duration: 4
     },
+    tags: [],
     topicList: [
       'Team leadership for dummies.',
       'Success in the IT world: Why Emotional Intelligence is superior to IQ and how developers can master it.',
@@ -236,6 +250,7 @@ export const events: (Meetup | Network)[] = [
       participants: 52,
       duration: 4
     },
+    tags: [],
     topicList: [
       'What to do if you have a team that is demotivated by the actions of the company’s management.',
       'How to pass any social security: three simple schemes for preparing for a job search.',
@@ -254,6 +269,7 @@ export const events: (Meetup | Network)[] = [
       participants: 48,
       duration: 4
     },
+    tags: [],
     topicList: [
       'Overcoming Burnout: A Guide to Self-Care',
       'No-code AI Product Creation',
@@ -273,6 +289,7 @@ export const events: (Meetup | Network)[] = [
       participants: 59,
       duration: 4
     },
+    tags: [],
     topicList: [
       'Behavior interviews in the Western market.',
       'Soft Skills for Interviews.',
@@ -280,6 +297,6 @@ export const events: (Meetup | Network)[] = [
     ],
     link: 'https://photos.app.goo.gl/RRHsNNsNnbQa7Jop6',
     _type: EventsTypes.MEETUP,
-    image: 'https://img.notionusercontent.com/s3/prod-files-secure%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2Ff3afdd81-afce-4ef7-bf65-89de6a3fdab4%2FIMG_9115_(1).jpg/size/w=1200?exp=1735259805&sig=mWR2ZiaptF0LpUxqPaDUs5z1HutOJQ8ugbfHG3xlXIg'
+    image: 'https://it-conect.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fba98bd55-74f8-46aa-a976-7248c0b8b835%2Ff3afdd81-afce-4ef7-bf65-89de6a3fdab4%2FIMG_9115_(1).jpg?table=block&id=65b30212-5ef9-4e84-8291-41960d71b3c3&spaceId=ba98bd55-74f8-46aa-a976-7248c0b8b835&width=730&userId=&cache=v2'
   },
 ];

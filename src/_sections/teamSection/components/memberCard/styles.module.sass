@@ -1,0 +1,84 @@
+.card
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 301px
+  overflow: hidden
+  position: relative
+  &:hover
+    .avatar
+      opacity: 0
+    .avatarHovered
+      opacity: 1
+      filter: grayscale(0)
+    .photoWrapper
+      z-index: 2
+      transform: scale(1.1)
+      opacity: 1
+
+.photoWrapper
+  position: absolute
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  height: 150px
+  width: 150px
+  border-radius: 50%
+  overflow: hidden
+  z-index: 1
+  right: -30px
+  bottom: -30px
+  opacity: 0.4
+  transition: all 0.1s linear
+
+.rectangle
+  position: absolute
+  top: 33px
+  left: 50%
+  transform: translate(-50%, 0) rotate(10deg)
+  width: 256px
+  height: 256px
+  border-radius: 60px
+  background: #00D6E6
+  z-index: 0
+  overflow: hidden
+
+  &.dark
+    background: #7030A0
+
+.avatarWrapper
+  position: relative
+  z-index: 1
+  width: 100%
+  height: 300px
+
+.avatarHovered,
+.avatar
+  position: absolute
+  top: 0
+  left: 0
+  transform: translate(-5%, 0) rotate(-10deg)
+  transition: all 0.2s linear
+  filter: grayscale(1)
+
+.avatarHovered
+  opacity: 0
+  transform: rotate(0deg)
+
+.textBlock
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 280px
+  margin-top: 16px
+  padding: 8px
+  .name
+    font-size: 24px
+    font-weight: 700
+    line-height: 32px
+  .role
+    font-size: 20px
+    font-weight: 400
+    line-height: 28px
+  .description
+    font-size: 16px

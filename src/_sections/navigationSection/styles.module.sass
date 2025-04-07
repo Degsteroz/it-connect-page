@@ -1,17 +1,26 @@
 @import '../../_styles/mixins.sass'
 
 .navigationSection
-  position: sticky
+  position: fixed
   top: 0
-  width: 100vw
-  padding: 10px
-  background: $secondary-color
+  width: 100%
+  right: 50%
+  transform: translateX(50%)
+  background: transparent
+  font-size: 25px
   color: $primary-color
-  font-size: 20px
-  box-shadow: 0 1px 10px -2px gray
   z-index: 10
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: background 0.3s ease-in-out
+.content
+  width: 100%
+  max-width: 1440px
+  background: transparent
 
 .navigationLink
   cursor: pointer
+  font-size: 16px
   &:hover
-    @include gradient-text
+    color: #1E90FF

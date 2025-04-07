@@ -1,0 +1,322 @@
+$page-bg: #ffffff
+$black: #000
+$red: #ff3c00
+$accent: #7030A0
+$blue: #00D6E7
+
+.page
+  width: 100vw
+  height: 100vh
+  background-color: $page-bg
+  padding: 0
+  position: relative
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.content
+  max-width: 1440px
+  width: 100%
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  padding: 0 2rem
+  position: relative
+  z-index: 2
+
+.left
+  flex: 0 0 50%
+  position: relative
+  height: 500px
+
+.imageWrapper
+  position: absolute
+  background-color: #fff
+  border: 2px solid $black
+  border-radius: 1rem
+  padding: 0.5rem
+  box-shadow: 6px 6px 0 $red
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 50%
+  left: 50%
+
+.hoodie
+  width: 280px
+  height: 360px
+  transform: rotate(4deg) translate(-20%, -50%)
+  z-index: 2
+
+.cap
+  width: 260px
+  height: 260px
+  transform: rotate(-6deg) translate(-90%, -70%)
+  z-index: 1
+
+.image
+  width: 100%
+  height: 100%
+  object-fit: cover
+  border-radius: 0.5rem
+
+.right
+  flex: 0 0 50%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: 1.2rem
+  padding-left: 2rem
+  z-index: 3
+  text-transform: uppercase
+
+.title
+  font-size: 3rem
+  font-weight: 900
+  color: $black
+  letter-spacing: 2px
+  display: flex
+  align-items: center
+  gap: 0.5rem
+
+.code
+  font-size: 0.9rem
+  background: $black
+  color: $red
+  padding: 0.2rem 0.6rem
+  border: 2px solid $red
+  font-family: 'Courier New', monospace
+  margin-left: 0.5rem
+
+.jp
+  font-size: 1.5rem
+  color: $red
+  font-family: 'Courier New', monospace
+
+.subtitle
+  font-size: 1.25rem
+  color: $accent
+  letter-spacing: 1px
+
+.barcode
+  font-size: 1.1rem
+  color: $black
+  font-family: monospace
+
+.tickerWrapper
+  position: fixed
+  bottom: 100px
+  left: 0
+  width: 102vw
+  height: 3rem
+  background-color: $red
+  transform: rotate(-2.5deg)
+  z-index: 9999
+  overflow: hidden
+  display: flex
+  align-items: center
+
+.tickerContent
+  display: flex
+  animation: ticker-loop 20s linear infinite
+  font-family: 'Courier New', monospace
+  font-size: 1.3rem
+  color: white
+  white-space: nowrap
+
+.tickerText
+  display: inline-block
+  padding-right: 4rem
+
+@keyframes ticker-loop
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-50%)
+.decals
+  position: absolute
+  top: 5%
+  left: 3%
+  z-index: 4
+  pointer-events: none
+  font-family: 'Courier New', monospace
+  color: $black
+
+.stamp
+  font-size: 0.8rem
+  color: #111
+  background: #fff
+  border: 1px dashed $red
+  padding: 0.2rem 0.5rem
+  margin-bottom: 0.5rem
+  display: inline-block
+
+.port
+  font-size: 0.75rem
+  color: $red
+  margin-left: 1rem
+
+.codeblock
+  font-size: 0.7rem
+  background: $black
+  color: $blue
+  padding: 0.1rem 0.3rem
+  margin-left: 0.5rem
+
+.cross
+  position: absolute
+  top: 120px
+  left: 60px
+  width: 20px
+  height: 20px
+  background: transparent
+  border: none
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 0
+    width: 2px
+    height: 100%
+    background: $red
+  &::after
+    transform: rotate(90deg)
+    transform-origin: center
+
+.arrowLine
+  position: absolute
+  bottom: 20px
+  left: 10vw
+  width: 100px
+  height: 4px
+  background: $red
+  transform: rotate(15deg)
+
+.jpLabel
+  position: absolute
+  top: 200px
+  left: -40px
+  font-size: 1rem
+  transform: rotate(-90deg)
+  color: $accent
+  font-family: 'Noto Sans JP', sans-serif
+
+.homeLink
+  color: $red
+  background-color: $black
+  padding: 0.6rem 1rem
+  font-family: 'Courier New', monospace
+  font-size: 42px
+  margin-top: 16px
+  text-transform: uppercase
+  border: 2px solid $red
+  text-decoration: none
+  box-shadow: 0 0 4px $red
+  transition: all 0.2s ease
+  animation: glitchPulse 1.8s infinite alternate
+  width: fit-content
+
+  &:hover
+    background-color: $red
+    color: $black
+    box-shadow: 0 0 12px $red, 0 0 2px white
+    animation: glitchShake 0.3s infinite linear
+
+@keyframes glitchPulse
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  50%
+    opacity: 0.85
+    transform: translate(-1px, 0)
+  100%
+    opacity: 1
+    transform: translate(1px, 0)
+
+@keyframes glitchShake
+  0%
+    transform: translate(0, 0)
+  25%
+    transform: translate(1px, -1px)
+  50%
+    transform: translate(-1px, 1px)
+  75%
+    transform: translate(1px, 1px)
+  100%
+    transform: translate(0, -1px)
+
+
+.rightDecor
+  position: absolute
+  top: 10%
+  right: 2%
+  z-index: 1
+  pointer-events: none
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  gap: 1rem
+
+.verticalBar
+  position: relative
+  width: 2px
+  height: 120px
+  background: repeating-linear-gradient(to bottom, $black, $black 6px, transparent 6px, transparent 12px)
+  opacity: 0.5
+  overflow: hidden
+
+.verticalBar::after
+  content: ''
+  position: absolute
+  left: 0
+  top: -20%
+  width: 100%
+  height: 30px
+  background: linear-gradient(to bottom, transparent, $red, transparent)
+  animation: scanLine 2.5s linear infinite
+
+@keyframes scanLine
+  0%
+    top: -30%
+  100%
+    top: 100%
+
+.status
+  font-size: 0.75rem
+  color: $blue
+  background: $black
+  padding: 0.2rem 0.6rem
+  border: 1px dashed $blue
+  font-family: 'Courier New', monospace
+  animation: pulseGlow 1.8s ease-in-out infinite
+
+@keyframes pulseGlow
+  0%, 100%
+    box-shadow: 0 0 2px $blue
+    opacity: 1
+  50%
+    box-shadow: 0 0 10px $blue
+    opacity: 0.7
+
+.cornerLine
+  width: 60px
+  height: 4px
+  background: $red
+  transform: rotate(45deg)
+  opacity: 0.7
+  animation: blinkLine 2s infinite
+
+@keyframes blinkLine
+  0%, 100%
+    opacity: 0.6
+  50%
+    opacity: 1
+
+.jpScan
+  font-size: 0.9rem
+  color: $accent
+  transform: rotate(90deg)
+  font-family: 'Noto Sans JP', sans-serif
+  margin-top: 1rem
+  opacity: 0.85

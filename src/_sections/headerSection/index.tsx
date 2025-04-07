@@ -1,68 +1,148 @@
 'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { InView } from 'react-intersection-observer';
 
-import logo from '@/_assets/logo.svg';
+import text from '@/_assets/headerSection/text.svg';
+import logo from '@/_assets/headerSection/backgroundLogo.svg';
+import image from '@/_assets/headerSection/image.png';
+import figure1 from '@/_assets/headerSection/figure1.png';
+import figure2 from '@/_assets/headerSection/figure2.png';
+import figure3 from '@/_assets/headerSection/figure3.png';
+
 import styles from './styles.module.sass';
 
 export default function HeaderSection() {
-  const titleComponentRef = useRef<HTMLDivElement | null>(null);
-  const descriptionComponentRef = useRef<HTMLDivElement | null>(null);
-  const descriptionText = 'IT Connect is a tech-focused community fostering collaboration and innovation. It unites professionals to share knowledge, build connections, and explore new opportunities in the IT sphere.';
+  const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
-    if (!titleComponentRef.current || !descriptionComponentRef.current) return;
+    if (!visible) return;
 
-    setTimeout(() => {
-      if (!titleComponentRef.current) return;
-      titleComponentRef.current.classList.add(styles.finalPosition);
-    }, 3000);
+    const figures = document.querySelectorAll<HTMLElement>(
+      `.${styles.figure1}, .${styles.figure2}, .${styles.figure3}`
+    );
 
-    setTimeout(() => {
-      if (!descriptionComponentRef.current) return;
-      descriptionComponentRef.current.classList.add(styles.visible);
-    }, 3500);
+    const maxTranslate = 10;
+    const maxRotate = 5;
+    const maxScale = 1.04;
+    const multipliers = Array.from({ length: figures.length }, () => 0.8 + (Math.random() * 0.6));
 
-    const homePage = document.getElementById('homePage');
+    let animationFrameId: number | null = null;
 
-    if (!homePage) return;
+    const applyTransform = (x: number, y: number) => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
-    const changeHeaderStyles = () => {
-      if (!titleComponentRef.current || !descriptionComponentRef.current) return;
-      const transparentValue = homePage.scrollTop / 400;
+      const offsetX = ((x / width) - 0.5) * 2 * maxTranslate;
+      const offsetY = ((y / height) - 0.5) * 2 * maxTranslate;
+      const rotate = ((x / width) - 0.5) * 2 * maxRotate;
 
-      descriptionComponentRef.current.style.opacity = String(1 - transparentValue);
-      descriptionComponentRef.current.style.transition = 'none';
-      titleComponentRef.current.style.opacity = String(1 - transparentValue);
-      titleComponentRef.current.style.transition = 'none';
+      figures.forEach((fig, i) => {
+        const m = multipliers[i] || 1;
+        fig.style.transform = `translate(${offsetX * m}px, ${offsetY * m}px) rotate(${rotate * m}deg) scale(${maxScale})`;
+      });
     };
 
-    setTimeout(() => {
-      homePage.addEventListener('scroll', changeHeaderStyles);
-    }, 3700);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!visible) return;
 
-    return () => homePage.removeEventListener('scroll', changeHeaderStyles);
-  }, [titleComponentRef, descriptionComponentRef]);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+      const x = e.clientX;
+      const y = e.clientY;
+
+      animationFrameId = requestAnimationFrame(() => {
+        figures.forEach((fig) => {
+          fig.style.transition = 'none';
+        });
+
+        applyTransform(x, y);
+      });
+    };
+
+    const handleMouseLeave = () => {
+      figures.forEach((fig) => {
+        fig.style.transition = 'transform 0.3s ease-out';
+        fig.style.transform = 'translate(0px, 0px) rotate(0deg) scale(1)';
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, [visible]);
 
   return (
     <header className={styles.headerSection}>
-      <div
-        className={styles.headerSection__titleComponent}
-        ref={titleComponentRef}
-      >
-        <h1 className={styles.headerSection__title}>
-          <Image src={logo} alt="logo" layout="fill" />
-        </h1>
-        <h2 className={styles.headerSection__subtitle}>
-          IT community in Belgrade
-        </h2>
-      </div>
-      <div className={styles.descriptionBlock} ref={descriptionComponentRef}>
-        {descriptionText}
-      </div>
-    </header>
+      <Image
+        src={logo}
+        width={478}
+        height={485}
+        alt="logo"
+        className={styles.headerSection__logo}
+      />
 
+      <div className={styles.headerSection__contentWrapper}>
+        <div className={styles.textBlock}>
+          <Image
+            src={text}
+            alt="logo"
+            width={579}
+            height={225}
+            style={{ zIndex: 1 }}
+            draggable={false}
+          />
+          <div className={styles.rectangle}/>
+
+          <div className={styles.textBlock__description}>
+            Bringing IT professionals together to share knowledge, build connections, and create opportunities
+          </div>
+        </div>
+        <div className={styles.imageBlock}>
+          <Image
+            src={image}
+            alt="image"
+            width={538}
+            height={538}
+            draggable={false}
+            style={{
+              zIndex: 4,
+              position: 'relative'
+            }}
+          />
+          <Image
+            src={figure1}
+            className={styles.figure1}
+            alt="image"
+            width={335}
+            height={335}
+            draggable={false}
+          />
+          <Image
+            src={figure2}
+            alt="image"
+            width={181}
+            height={181}
+            draggable={false}
+            className={styles.figure2}
+          />
+          <Image
+            className={styles.figure3}
+            src={figure3}
+            alt="image"
+            width={275}
+            height={408}
+            draggable={false}
+          />
+        </div>
+      </div>
+      <InView onChange={setVisible} />
+    </header>
   );
 }
 

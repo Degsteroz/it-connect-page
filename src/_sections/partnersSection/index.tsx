@@ -18,11 +18,14 @@ const logos = [
   { id: 'ciderrs_q24v8s', src: 'ciderrs_q24v8s.png' },
 ];
 
-const logosDoubled = [...logos, ...logos];
+const logosDoubled = [...logos, ...logos.map(item => ({
+  ...item,
+  id: item.id + 'second'
+}))];
 
 const images = logosDoubled.map((logo) => (
   <div
-    key={`${logo.id}-${Math.random()}`}
+    key={logo.id}
     className={styles.imageWrapper}
   >
     <Image
