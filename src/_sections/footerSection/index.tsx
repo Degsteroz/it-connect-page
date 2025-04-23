@@ -78,6 +78,9 @@ const FooterSection = () => (
         vertical
         className={styles.linksBlock}
         gap={10}
+        style={{
+          marginLeft: '60px',
+        }}
       >
         <div className={styles.linksBlockTitle}>
           Extra Info
