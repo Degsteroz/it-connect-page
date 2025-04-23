@@ -49,6 +49,7 @@ export default function FormatSection() {
         width={'fit-content'}
         footer={false}
         className={styles.modal}
+        destroyOnClose
       >
         <EventTypeCard eventType={data[activeIndex || 0]} />
       </Modal>

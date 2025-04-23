@@ -16,6 +16,8 @@ const logos = [
   { id: 'opyatEti_gqipkx', src: 'opyatEti_gqipkx.png' },
   { id: 'm9ak51effaiqbgalodsz', src: 'm9ak51effaiqbgalodsz.svg' },
   { id: 'ciderrs_q24v8s', src: 'ciderrs_q24v8s.png' },
+  { id: 'CDT_HUB_2_hoaxj8', src: 'CDT_HUB_2_hoaxj8' },
+  { id: 'Лого_KO-KO_без_фона_agt7ed', src: 'Лого_KO-KO_без_фона_agt7ed' },
 ];
 
 const logosDoubled = [...logos, ...logos.map(item => ({

@@ -58,9 +58,9 @@ export default function ContactSection() {
         {contactCards}
       </Flex>
 
-      <button className={styles.button}>
-        Connect
-      </button>
+      {/*<button className={styles.button}>*/}
+      {/*  Connect*/}
+      {/*</button>*/}
     </section>
   );
 }

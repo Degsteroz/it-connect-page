@@ -112,6 +112,7 @@ export default function EventsSection() {
         width={'fit-content'}
         footer={false}
         className={styles.modal}
+        destroyOnClose
       >
         {cardIndex !== null && (
           <ModalCardContent event={events[cardIndex]} />

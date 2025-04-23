@@ -55,6 +55,7 @@ const FooterSection = () => (
           </a>
         </div>
       </Flex>
+
       <Flex
         vertical
         className={styles.linksBlock}
@@ -70,6 +71,26 @@ const FooterSection = () => (
           <Link href="https://buymeacoffee.com/itconnect">Buy me a coffee</Link>
           <Link href="https://buymeacoffee.com/itconnect/extras">Shop</Link>
           <Link href="/merch">OUR MERCH</Link>
+        </Flex>
+      </Flex>
+
+      <Flex
+        vertical
+        className={styles.linksBlock}
+        gap={10}
+      >
+        <div className={styles.linksBlockTitle}>
+          Extra Info
+        </div>
+        <Flex
+          vertical
+          gap={10}
+        >
+          <Link
+            href="https://it-conect.notion.site/Rules-and-Values-of-the-IT-Connect-Community-3cd92f4ea08247b7881535ee7e8b8372"
+          >
+            Rules and Values
+          </Link>
         </Flex>
       </Flex>
 

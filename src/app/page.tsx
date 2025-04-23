@@ -13,40 +13,54 @@ import ImpactSection from '@/_sections/impactSection';
 import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
 
+import Logo from '@/_assets/logo';
+
 import styles from './page.module.css';
 
 export default function Home() {
+
   return (
-    <div className={styles.page}>
-      <NavigationSection/>
-      <HeaderSection/>
+    <div>
+      <div className={styles.page}>
+        <NavigationSection/>
+        <HeaderSection/>
 
-      <div className={styles.centered}>
-        <div id="closest-event" />
-        <ClosestEventSection />
+        <div className={styles.centered}>
+          <div id="closest-event" />
+          <ClosestEventSection />
+        </div>
+        <div id="events" />
+        <EventsSection />
+
+        <div className={styles.centered}>
+          <ImpactSection />
+          <div id="formats" />
+          <FormatsSection />
+          <HistorySignSection />
+          <div id="sponsorship" />
+          <SponsorsSection />
+        </div>
+
+        <PartnersSection />
+
+        <div className={styles.centered}>
+          <div id="team"/>
+          <TeamSection/>
+          <div id="contacts" />
+          <ContactSection/>
+        </div>
+
+        <FooterSection/>
       </div>
-      <div id="events" />
-      <EventsSection />
 
-      <div className={styles.centered}>
-        <ImpactSection />
-        <div id="formats" />
-        <FormatsSection />
-        <HistorySignSection />
-        <div id="sponsorship" />
-        <SponsorsSection />
+      <div className={styles.mobilePage}>
+        MOBILE VERSION WILL BE SOON
+        <Logo
+          color={'black'}
+          width={200}
+          height={30}
+        />
       </div>
-
-      <PartnersSection />
-
-      <div className={styles.centered}>
-        <div id="team"/>
-        <TeamSection/>
-        <div id="contacts" />
-        <ContactSection/>
-      </div>
-
-      <FooterSection/>
     </div>
   );
 }

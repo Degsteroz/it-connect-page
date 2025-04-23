@@ -42,7 +42,7 @@ const navigationLinks: NavigationLinkType[] = [
 ];
 
 export default function NavigationSection() {
-  const [color, setColor] = useState<string>('white');
+  const [color, setColor] = useState<'white' | 'black'>('white');
   const navigationHeaderRef = useRef<HTMLDivElement>(null);
   const handleLinkClick = (link: NavigationLinkType) => {
     const homePageComponent = document.getElementById('homePage');
@@ -87,6 +87,7 @@ export default function NavigationSection() {
         href={contact.url}
         target="_blank"
         key={contact.title}
+        style={{ filter: color === 'black' ? 'invert()' : 'none' }}
       >
         <Image src={contact.icon} alt="contact" width={32} height={32} />
       </Link>
