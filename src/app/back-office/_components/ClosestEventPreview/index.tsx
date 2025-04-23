@@ -19,7 +19,7 @@ const icons = {
   meetup: meetupIcon,
 };
 
-export default function ClosestEventPreview({ data }: {data: IClosestEvent | null}) {
+export default function ClosestEventPreview({ data, preview }: {data: IClosestEvent | null, preview?: boolean}) {
   if (!data) return null;
 
   const tags = data.tags.map(tag => (
@@ -103,19 +103,21 @@ export default function ClosestEventPreview({ data }: {data: IClosestEvent | nul
               Sign in
             </Link>
 
-            <div className={styles.calendarWrapper}>
-              <AddToCalendarButton
-                name={data.title}
-                startDate={currentDate.format('YYYY-MM-DD')}
-                options={['Apple','Google']}
-                timeZone="Europe/Belgrade"
-                startTime={currentDate.format('HH:mm')}
-                endTime={currentDate.add(2, 'hour').format('HH:mm')}
-                hideBranding
-                buttonStyle="round"
-                buttonsList
-              />
-            </div>
+            {!preview && (
+              <div className={styles.calendarWrapper}>
+                <AddToCalendarButton
+                  name={data.title}
+                  startDate={currentDate.format('YYYY-MM-DD')}
+                  options={['Apple','Google']}
+                  timeZone="Europe/Belgrade"
+                  startTime={currentDate.format('HH:mm')}
+                  endTime={currentDate.add(2, 'hour').format('HH:mm')}
+                  hideBranding
+                  buttonStyle="round"
+                  buttonsList
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

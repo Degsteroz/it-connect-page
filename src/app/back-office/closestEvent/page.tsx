@@ -122,10 +122,10 @@ export default function ClosestEvent() {
   };
 
   return (
-    <Flex gap={20}>
+    <Flex gap={10}>
       {contextHolder}
       <Form
-        style={{ width: '40%', height: 'fit-content' }}
+        style={{ width: '30%', height: 'fit-content' }}
         labelCol={{ span: 5 }}
         wrapperCol={{ span: 12 }}
         onChange={() => setFormData(form.getValues())}
@@ -311,10 +311,10 @@ export default function ClosestEvent() {
       </Form>
       {formData && (
         <Card style={{
-          flex: '1 1 50%',
+          flex: '1 1 70%',
           height: 'fit-content'
         }}>
-          <ClosestEventPreview data={formData} />
+          <ClosestEventPreview data={formData} preview/>
         </Card>
       )}
     </Flex>

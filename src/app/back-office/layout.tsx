@@ -22,6 +22,8 @@ import NavigationComponent from './_components/navigationComponent';
 
 import styles from './_styles/styles.module.sass';
 
+let logged: boolean = false;
+
 export default function BackOfficeLayout({
   children,
 }: {
@@ -34,14 +36,15 @@ export default function BackOfficeLayout({
   const { setClosestEvent, setEvents } = useStore(state => state);
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        router.push('/login');
-        return;
-      }
-
-      setUser(user);
-    });
+    auth.onAuthStateChanged(
+      (user) => {
+        logged = true;
+        setUser(user);
+      },
+      () => {},
+      () => {
+        if (logged) router.push('/login');
+      });
   }, []);
 
   useEffect(() => {
@@ -64,6 +67,8 @@ export default function BackOfficeLayout({
 
     return () => unsub();
   }, [user]);
+
+  if (!user) return null;
 
   return (
     <div className={styles.backOfficeComponent}>
