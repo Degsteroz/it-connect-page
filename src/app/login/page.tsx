@@ -1,21 +1,32 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
-import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import styles from './styles.module.sass';
 import { auth } from '@/_fireBase';
 
 export default function LoginPage() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        router.push('/back-office');
-      }
-    });
+    setLoading(true);
+    auth.authStateReady()
+      .then(() => {
+        const { currentUser } = auth;
+
+        if (currentUser) {
+          router.push('/back-office');
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return null;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
