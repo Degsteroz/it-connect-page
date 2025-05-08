@@ -18,6 +18,7 @@ const logos = [
   { id: 'ciderrs_q24v8s', src: 'ciderrs_q24v8s.png' },
   { id: 'CDT_HUB_2_hoaxj8', src: 'CDT_HUB_2_hoaxj8' },
   { id: 'Лого_KO-KO_без_фона_agt7ed', src: 'Лого_KO-KO_без_фона_agt7ed' },
+  { id: 'startit_logo-vertikalni-crni_RGB_yhewer', src: 'startit_logo-vertikalni-crni_RGB_yhewer' },
 ];
 
 const logosDoubled = [...logos, ...logos.map(item => ({

@@ -12,6 +12,7 @@ import ClosestEventSection from '@/_sections/closestEventSection';
 import ImpactSection from '@/_sections/impactSection';
 import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
+import SummerFestSection from '@/_sections/summerFestSection';
 
 import Logo from '@/_assets/logo';
 
@@ -26,13 +27,14 @@ export default function Home() {
         <HeaderSection/>
 
         <div className={styles.centered}>
-          <div id="closest-event" />
-          <ClosestEventSection />
+          <SummerFestSection />
         </div>
         <div id="events" />
         <EventsSection />
 
         <div className={styles.centered}>
+          <div id="closest-event" />
+          <ClosestEventSection />
           <ImpactSection />
           <div id="formats" />
           <FormatsSection />

@@ -12,7 +12,7 @@ export default function ImpactSection() {
       divider: 1000,
     },
     {
-      title: 'event per year',
+      title: 'events per year',
       count: 60,
       divider: 3,
     },

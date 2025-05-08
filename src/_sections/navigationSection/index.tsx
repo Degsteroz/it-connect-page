@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import { contactsArray } from '@/_sections/contactsSection';
 import Logo from '@/_assets/logo';
+import { useViewPort } from '@/_hooks';
 
 import styles from './styles.module.sass';
 
@@ -42,6 +43,7 @@ const navigationLinks: NavigationLinkType[] = [
 ];
 
 export default function NavigationSection() {
+  const { isMobile } = useViewPort();
   const [color, setColor] = useState<'white' | 'black'>('white');
   const navigationHeaderRef = useRef<HTMLDivElement>(null);
   const handleLinkClick = (link: NavigationLinkType) => {
@@ -94,10 +96,11 @@ export default function NavigationSection() {
     ));
 
   return (
-    <nav className={styles.navigationSection} ref={navigationHeaderRef}>
-      <div
-        className={styles.content}
-      >
+    <nav
+      className={styles.navigationSection}
+      ref={navigationHeaderRef}
+    >
+      <div className={styles.content}>
         <Flex
           align="center"
           justify="space-between"
@@ -115,12 +118,15 @@ export default function NavigationSection() {
               height={30}
             />
           </Flex>
-          <Flex align="center" gap={43}>
-            <Flex gap={32}>{navigationButtons}</Flex>
-            <Flex align="center" gap={10}>
-              {contactCards}
+
+          {!isMobile && (
+            <Flex align="center" gap={43}>
+              <Flex gap={32}>{navigationButtons}</Flex>
+              <Flex align="center" gap={10}>
+                {contactCards}
+              </Flex>
             </Flex>
-          </Flex>
+          )}
         </Flex>
       </div>
     </nav>

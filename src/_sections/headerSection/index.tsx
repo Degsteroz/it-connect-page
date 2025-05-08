@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { InView } from 'react-intersection-observer';
+import { useViewPort } from '@/_hooks';
 
 import text from '@/_assets/headerSection/text.svg';
 import logo from '@/_assets/headerSection/backgroundLogo.svg';
@@ -14,6 +15,8 @@ import styles from './styles.module.sass';
 
 export default function HeaderSection() {
   const [visible, setVisible] = useState<boolean>(true);
+
+  const { isMobile } = useViewPort();
 
   useEffect(() => {
     if (!visible) return;
@@ -92,8 +95,8 @@ export default function HeaderSection() {
           <Image
             src={text}
             alt="logo"
-            width={579}
-            height={225}
+            width={!isMobile ? 579 : 300}
+            height={!isMobile ? 225 : 130}
             style={{ zIndex: 1 }}
             draggable={false}
           />
@@ -107,8 +110,8 @@ export default function HeaderSection() {
           <Image
             src={image}
             alt="image"
-            width={538}
-            height={538}
+            width={538 / (isMobile ? 2 : 1)}
+            height={538 / (isMobile ? 2 : 1)}
             draggable={false}
             style={{
               zIndex: 4,
@@ -119,15 +122,15 @@ export default function HeaderSection() {
             src={figure1}
             className={styles.figure1}
             alt="image"
-            width={335}
-            height={335}
+            width={335 / (isMobile ? 2 : 1)}
+            height={335 / (isMobile ? 2 : 1)}
             draggable={false}
           />
           <Image
             src={figure2}
             alt="image"
-            width={181}
-            height={181}
+            width={181 / (isMobile ? 2 : 1)}
+            height={181 / (isMobile ? 2 : 1)}
             draggable={false}
             className={styles.figure2}
           />
@@ -135,8 +138,8 @@ export default function HeaderSection() {
             className={styles.figure3}
             src={figure3}
             alt="image"
-            width={275}
-            height={408}
+            width={275 / (isMobile ? 2 : 1)}
+            height={408 / (isMobile ? 2 : 1)}
             draggable={false}
           />
         </div>

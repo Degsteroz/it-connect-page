@@ -27,6 +27,20 @@ export default function SponsorshipCardComponent({
   sponsorshipCard: SponsorCardProps;
 }) {
   const { title, description, preferences, price, highlighted, decorateImage, link } = sponsorshipCard;
+  const getLinkContent = () => {
+    const buttonClassName = `${styles.button} ${highlighted ? styles.highlighted : ''}`;
+    const buttonLink = highlighted ? 'mailto:itconnectsocialnetworks@gmail.com' : link;
+    return (
+      <a
+        href={buttonLink}
+        target="_blank"
+        className={buttonClassName}
+        rel="noreferrer"
+      >
+        I’m in
+      </a>
+    );
+  };
 
   return (
     <div className={`${styles.card} ${highlighted ? styles.highlighted : ''}`}>
@@ -48,16 +62,7 @@ export default function SponsorshipCardComponent({
         ))}
       </ul>
       <p className={styles.price}>{price}</p>
-      {!highlighted && (
-        <a
-          href={link}
-          target="_blank"
-          className={styles.button}
-          rel="noreferrer"
-        >
-          I’m in
-        </a>
-      )}
+      {getLinkContent()}
     </div>
   );
 }
