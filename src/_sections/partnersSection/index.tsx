@@ -6,7 +6,7 @@ import { useViewPort } from '@/_hooks';
 
 import styles from './styles.module.sass';
 
-const BASE_URL = 'https://res.cloudinary.com/dtecpsig5/image/upload/v1738704171/it-connect-parthners/';
+const BASE_URL = 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_300/v1738704171/it-connect-parthners/';
 
 const logos = [
   { id: 'kzrt6aklsqohtzgv0cyi', src: 'kzrt6aklsqohtzgv0cyi.svg' },
@@ -20,7 +20,7 @@ const logos = [
   { id: 'm9ak51effaiqbgalodsz', src: 'm9ak51effaiqbgalodsz.svg' },
   { id: 'ciderrs_q24v8s', src: 'ciderrs_q24v8s.png' },
   { id: 'CDT_HUB_2_hoaxj8', src: 'CDT_HUB_2_hoaxj8' },
-  { id: 'Лого_KO-KO_без_фона_agt7ed', src: 'Лого_KO-KO_без_фона_agt7ed' },
+  { id: 'Лого_KO-KO_без_фона_agt7ed', src: 'kokologo' },
   { id: 'startit_logo-vertikalni-crni_RGB_yhewer', src: 'startit_logo-vertikalni-crni_RGB_yhewer' },
 ];
 
