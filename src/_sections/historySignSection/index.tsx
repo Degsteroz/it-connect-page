@@ -1,11 +1,15 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
+
+import { useViewPort } from '@/_hooks';
 
 import belgrade from '@/_assets/historySignSection/belgrade.svg';
 
 import styles from './styles.module.sass';
 
 export default function HistorySignSection() {
+  const { isMobile } =  useViewPort();
   return (
     <section className={styles.signSection}>
       <div className={styles.content}>
@@ -23,8 +27,8 @@ export default function HistorySignSection() {
           src={belgrade}
           style={{ margin: '0 auto' }}
           alt=""
-          width={518}
-          height={95}
+          width={518 / (isMobile ? 2 : 1)}
+          height={95 / (isMobile ? 2 : 1)}
         />
       </div>
     </section>

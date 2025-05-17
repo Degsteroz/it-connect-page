@@ -14,9 +14,8 @@ import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
 import SummerFestSection from '@/_sections/summerFestSection';
 
-import Logo from '@/_assets/logo';
-
 import styles from './page.module.css';
+import MobileNavigation from '@/_sections/_mobileNavigation';
 
 export default function Home() {
 
@@ -53,15 +52,7 @@ export default function Home() {
         </div>
 
         <FooterSection/>
-      </div>
-
-      <div className={styles.mobilePage}>
-        MOBILE VERSION WILL BE SOON
-        <Logo
-          color={'black'}
-          width={200}
-          height={30}
-        />
+        <MobileNavigation />
       </div>
     </div>
   );

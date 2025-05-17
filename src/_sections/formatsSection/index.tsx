@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Card, Modal } from 'antd';
 import Image from 'next/image';
 
+import { useViewPort } from '@/_hooks';
+
 import { data } from './data';
 import EventTypeCard from './components/EventTypeCard';
 
@@ -10,6 +12,7 @@ import styles from './styles.module.sass';
 
 export default function FormatSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { isMobile } = useViewPort();
   const formatsComponents = data.map((format, index) => {
     return (
       <Card
@@ -22,8 +25,8 @@ export default function FormatSection() {
         <Image
           src={format.photo}
           alt=""
-          width={368}
-          height={246}
+          width={368 / (isMobile ? 1.5 : 1)}
+          height={246 / (isMobile ? 1.5 : 1)}
           className={styles.image}
         />
         <div className={styles.cardTextBlock}>
@@ -41,7 +44,18 @@ export default function FormatSection() {
 
   return (
     <section className={styles.formatsSection}>
-      {formatsComponents}
+      {isMobile && (
+        <div className={styles.title}>FORMATS</div>
+      )}
+      {isMobile ?
+        (
+          <div className={styles.cardWrapper}>
+            {formatsComponents}
+          </div>
+        )
+        : (
+          formatsComponents
+        )}
 
       <Modal
         open={activeIndex !== null}

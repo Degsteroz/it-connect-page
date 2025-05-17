@@ -11,14 +11,15 @@ import { doc, getDoc } from 'firebase/firestore';
 import { eventsCollection } from '@/_fireBase';
 import { IClosestEvent } from '@/_interfaces';
 
+import { getImageUrl } from '@/_utils';
+import { useViewPort } from '@/_hooks';
+
 import background from '@/_assets/closestEventSection/background.png';
 import telegramIcon from '@/_assets/telegramIcon.svg';
 import linkedinIcon from '@/_assets/linkedinIcon.svg';
 import meetupIcon from '@/_assets/meetupIcon.svg';
 
 import styles from './styles.module.sass';
-
-import { getImageUrl } from '@/_utils';
 
 const icons = {
   linkedin: linkedinIcon,
@@ -28,7 +29,7 @@ const icons = {
 
 export default function ClosestEventSection() {
   const [closestEvent, setClosestEvent] = useState<IClosestEvent | null>(null);
-
+  const { isMobile } = useViewPort();
   useEffect(() => {
     const eventsRef = doc(eventsCollection, 'closestEvent');
     getDoc(eventsRef)
@@ -44,20 +45,23 @@ export default function ClosestEventSection() {
         <Skeleton.Node
           active
           style={{
-            width: '1312px',
-            height: '429px',
+            width: isMobile ? '90vw' : '1312px',
+            height: isMobile ? '760px' : '429px',
             borderRadius: '40px',
             backgroundColor: '#7030A0B2',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            marginBottom: '40px'
           }}
         >
-          <Image
-            src={background}
-            alt="background image"
-            className={styles.image}
-            width={1321}
-          />
+          {!isMobile && (
+            <Image
+              src={background}
+              alt="background image"
+              className={styles.image}
+              width={1321}
+            />
+          )}
         </Skeleton.Node>
       </div>
     );

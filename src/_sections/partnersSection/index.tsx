@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
+
+import { useViewPort } from '@/_hooks';
 
 import styles from './styles.module.sass';
 
@@ -21,27 +24,33 @@ const logos = [
   { id: 'startit_logo-vertikalni-crni_RGB_yhewer', src: 'startit_logo-vertikalni-crni_RGB_yhewer' },
 ];
 
-const logosDoubled = [...logos, ...logos.map(item => ({
-  ...item,
-  id: item.id + 'second'
-}))];
-
-const images = logosDoubled.map((logo) => (
-  <div
-    key={logo.id}
-    className={styles.imageWrapper}
-  >
-    <Image
-      className={styles.logo}
-      src={BASE_URL + logo.src}
-      alt={`Partner ${logo.id}`}
-      fill
-      style={{ objectFit: 'contain' }}
-    />
-  </div>
-));
-
 export default function PartnersSection() {
+  const logosDoubled = [...logos, ...logos.map(item => ({
+    ...item,
+    id: item.id + 'second'
+  }))];
+
+  const { isMobile } = useViewPort();
+
+  const images = (
+    isMobile
+      ? logos
+      : logosDoubled
+  ).map((logo) => (
+    <div
+      key={logo.id}
+      className={styles.imageWrapper}
+    >
+      <Image
+        className={styles.logo}
+        src={BASE_URL + logo.src}
+        alt={`Partner ${logo.id}`}
+        fill
+        style={{ objectFit: 'contain' }}
+      />
+    </div>
+  ));
+
   return (
     <section className={styles.partnersSection}>
       <h2 className={styles.title}>PARTNERS</h2>

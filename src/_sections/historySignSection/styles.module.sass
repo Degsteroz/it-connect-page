@@ -5,6 +5,9 @@
   background-color: #222222
   border-radius: 40px
   height: 367px
+  @media only screen and (max-width: 500px)
+    width: 90vw
+    height: fit-content
 
 .content
   display: flex
@@ -25,10 +28,14 @@
     margin-bottom: 16px
     z-index: 3
     font-weight: 700
+    @media only screen and (max-width: 500px)
+      font-size: 28px
 
   .subtitle
     font-size: 28px
     text-align: center
+    @media only screen and (max-width: 500px)
+      font-size: 18px
 
   &::before
     content: ""
@@ -41,3 +48,5 @@
     transform: translate(-50%, 0) rotate(-1.7deg)
     z-index: 1
     border-radius: 16px
+    @media only screen and (max-width: 500px)
+      width: 100%

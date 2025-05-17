@@ -67,5 +67,33 @@
           &:hover
             transform: scale(1.07)
 
+  @media only screen and (max-width: 500px)
+    width: 90vw
+    height: 90vh
+    padding: 20px 10px
+    .imageWrapper
+      width: 90vw
+    .contentWrapper
+      .firstRow
+        flex-direction: column
+        .location
+          font-size: 24px
+          margin-bottom: 10px
+      .secondRow
+        margin-top: 30px
+        flex-direction: column
+        justify-content: space-around
+        height: auto
+        .leftSide
+          display: flex
+          flex-direction: column
+          align-items: center
+          .textBlock
+            text-align: center
+            margin: 20px 0
+        .rightSide
+          flex-direction: column
+          margin: 40px auto 20px
+
 .image
   opacity: 0.2

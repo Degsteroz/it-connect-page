@@ -4,43 +4,14 @@ import { Flex } from 'antd';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { contactsArray } from '@/_sections/contactsSection';
-import Logo from '@/_assets/logo';
 import { useViewPort } from '@/_hooks';
 
+import { contactsArray } from '@/_sections/contactsSection';
+import Logo from '@/_assets/logo';
+
+import { navigationLinks, NavigationLinkType } from '@/_consts';
+
 import styles from './styles.module.sass';
-
-type NavigationLinkType = {
-  title: string;
-  id: string;
-}
-
-const navigationLinks: NavigationLinkType[] = [
-  {
-    title: 'Closest event',
-    id: 'closest-event',
-  },
-  {
-    title: 'Events',
-    id: 'events',
-  },
-  {
-    title: 'Formats',
-    id: 'formats',
-  },
-  {
-    title: 'Sponsorship',
-    id: 'sponsorship',
-  },
-  {
-    title: 'Team',
-    id: 'team',
-  },
-  {
-    title: 'Contacts',
-    id: 'contacts',
-  },
-];
 
 export default function NavigationSection() {
   const { isMobile } = useViewPort();

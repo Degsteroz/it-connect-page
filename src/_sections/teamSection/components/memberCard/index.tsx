@@ -1,8 +1,11 @@
+'use client';
 import React from 'react';
 import { Card } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+
+import { useViewPort } from '@/_hooks';
 
 import telegramIcon from '@/_assets/telegramIcon.svg';
 import linkedinIcon from '@/_assets/linkedinIcon.svg';
@@ -42,6 +45,7 @@ const getImageUrl = (id: string) => {
 };
 
 export default function MemberCard({ data, index }: MemberCardProps) {
+  const { isMobile } = useViewPort();
   const rectangleClassName = `${styles.rectangle} ${(index + 1) % 2 ? '' : styles.dark}`;
 
   const getContactComponent = () => {
@@ -71,10 +75,15 @@ export default function MemberCard({ data, index }: MemberCardProps) {
 
   return (
     <Card
-      style={{ position: 'relative' }}
+      style={{
+        position: 'relative',
+        width: isMobile ? '300px' : 'auto',
+        flex: isMobile ? '0 0 300px' : 'initial'
+      }}
       styles={{
         body: {
-          padding: 0
+          padding: 0,
+          height: '100%',
         }
       }}
     >

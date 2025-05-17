@@ -1,6 +1,12 @@
 .summerFestSection
   margin: 0 auto 64px
   position: relative
+  @media only screen and (max-width: 500px)
+    width: 100vw
+    min-height: 600px
+    height: fit-content
+    display: flex
+    flex-direction: column
 
 .title
   margin: 0 auto
@@ -24,6 +30,14 @@
     background: #26a9d8
     margin-top: 16px
     z-index: -1
+    @media only screen and (max-width: 500px)
+      top: 10px
+      width: 300px
+      height: 60px
+
+  @media only screen and (max-width: 500px)
+    font-size: 40px
+    width: fit-content
 
 .imageWrapper
   display: flex
@@ -34,6 +48,12 @@
   height: calc(850px / 1.77)
   position: relative
   border-radius: 12px
+  @media only screen and (max-width: 500px)
+    width: 80vw
+    max-width: 360px
+    height: calc(80vw / 0.56)
+    max-height: 640px
+    margin: 0 auto
 
 .clickArea
   position: absolute
@@ -48,6 +68,13 @@
   animation-delay: 0.3s
   box-shadow: 0 0 50px 5px #26a9d8
   transition: box-shadow 0.2s linear
+
+  @media only screen and (max-width: 500px)
+    bottom: 215px
+    right: 27px
+    width: 257px
+    height: 127px
+    border-radius: 16px
 
   @keyframes glow
     0%

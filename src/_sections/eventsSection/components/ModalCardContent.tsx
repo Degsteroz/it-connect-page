@@ -3,10 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Col, Flex, List, Row, Statistic, Tag } from 'antd';
 
+import { useViewPort } from '@/_hooks';
+
 import { EventsTypes, Meetup, Network } from '../data';
 import styles from './ModalCardContent.module.sass';
 
 export default function ModalCardContent({ event }: {event: Meetup | Network | null}) {
+  const { isMobile } = useViewPort();
   if (!event) return null;
 
   const isEvent = event._type === EventsTypes.MEETUP;
@@ -35,8 +38,8 @@ export default function ModalCardContent({ event }: {event: Meetup | Network | n
       <Image
         className={styles.content__image}
         src={event.image}
-        width="768"
-        height="512"
+        width={768 / (isMobile ? 2.5 : 1)}
+        height={512 / (isMobile ? 2.5 : 1)}
         alt=""
       />
 

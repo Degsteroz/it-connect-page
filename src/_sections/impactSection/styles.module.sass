@@ -5,6 +5,9 @@
   background-color: #222222
   border-radius: 40px
   height: 396px
+  @media only screen and (max-width: 500px)
+    max-width: 90vw
+    height: fit-content
 
 .content
   display: flex
@@ -13,12 +16,15 @@
   height: 100%
   width: 100%
   color: #E4E4E4
+  @media only screen and (max-width: 500px)
+    padding: 24px
 
 
 .titleBlock
   width: 600px
   margin: 0 auto 16px
   position: relative
+
   .title
     position: relative
     font-size: 40px
@@ -31,6 +37,13 @@
     font-size: 28px
     text-align: center
 
+  @media only screen and (max-width: 500px)
+    width: 100%
+    .title
+      font-size: 30px
+    .subtitle
+      font-size: 20px
+
   &::before
     content: ""
     width: 600px
@@ -42,15 +55,23 @@
     transform: translate(-50%, 0) rotate(-1.7deg)
     z-index: 1
     border-radius: 16px
+    @media only screen and (max-width: 500px)
+      width: 80vw
 
 .statsTitle
   font-size: 32px
   text-align: center
   margin-bottom: 16px
+  @media only screen and (max-width: 500px)
+    font-size: 24px
+    margin-bottom: 32px
 
 .statsWrapper
   display: flex
   justify-content: space-between
+  @media only screen and (max-width: 500px)
+    flex-direction: column
+    gap: 20px
 
   .statComponent
     display: flex
@@ -58,6 +79,10 @@
     gap: 16px
     flex: 0 0 285px
     align-items: center
+    @media only screen and (max-width: 500px)
+      flex: 0 0 100px
+      gap: 8px
+
     .text
       font-weight: 400
       font-size: 24px

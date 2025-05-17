@@ -4,10 +4,15 @@ $imageWidth: 45vw
   display: flex
   gap: 80px
   padding: 30px
+  @media only screen and (max-width: 500px)
+    flex-direction: column-reverse
+    gap: 20px
 
 .eventTypeCard__title
   font-size: 48px
   margin-bottom: 10px
+  @media only screen and (max-width: 500px)
+    font-size: 36px
 
 .image_wrapper
   flex: 0 0 $imageWidth
@@ -16,6 +21,8 @@ $imageWidth: 45vw
   position: relative
   overflow: hidden
   border-radius: 12px
+  @media only screen and (max-width: 500px)
+    width: 100%
 
 .body__textBlock
   font-size: 20px

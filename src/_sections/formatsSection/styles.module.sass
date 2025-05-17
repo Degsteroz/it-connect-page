@@ -6,9 +6,21 @@
   margin: 0 auto 96px
   column-gap: 32px
   row-gap: 40px
+  @media only screen and (max-width: 500px)
+    width: 90vw
+    max-width: 90vw
+
+  .title
+    text-align: center
+    margin: 0 auto
+    font-size: 45px
+    font-weight: bold
 
 .formatCard
   width: 416px
+  @media only screen and (max-width: 500px)
+    width: 100%
+
   &:hover
     background-color: #7030A0
     transition: all 0.3s ease-in-out
@@ -20,6 +32,9 @@
     border-radius: 16px
     filter: sepia(100%) hue-rotate(215deg)
     transition: filter 0.05s ease-in-out
+    @media only screen and (max-width: 500px)
+      margin: 0 auto
+
   .cardTextBlock
     margin-top: 16px
     .cardTitle
@@ -30,6 +45,13 @@
     .cardDescription
       font-size: 20px
       line-height: 28px
+
+.cardWrapper
+  width: 100vw
+  display: flex
+  gap:  12px
+  padding-bottom: 6px
+  overflow-x: scroll
 
 .tabComponent
   display: flex

@@ -4,16 +4,26 @@
   display: flex
   position: relative
   padding: 80px 140px
+  @media only screen and (max-width: 500px)
+    padding: 10px 20px
 
 .footerSection__content
   color: white
   display: flex
   width: 100%
+  @media only screen and (max-width: 500px)
+    flex-flow: column
+    gap: 20px
 
   .firstBlock
     opacity: 0.6
     margin-right: 120px
+    @media only screen and (max-width: 500px)
+      margin-right: 20px
+
   .linksBlock
+    @media only screen and (max-width: 500px)
+      margin: 0 !important
     .linksBlockTitle
       font-size: 20px
 
@@ -21,3 +31,5 @@
     font-family: var(--font-poppins)
     font-size: 28px
     margin-left: auto
+    @media only screen and (max-width: 500px)
+      margin-left: 0

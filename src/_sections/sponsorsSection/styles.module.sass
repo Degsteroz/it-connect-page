@@ -6,13 +6,22 @@
   max-width: 1312px
   align-items: center
 
+
 .sponsorshipSection_title
   font-size: 68px
   line-height: 68px
   font-weight: 700
   margin-bottom: 90px
+  @media only screen and (max-width: 500px)
+    margin-bottom: 20px
+    text-align: center
+    font-size: 60px
 
 .cardWrapper
   display: flex
   justify-content: space-between
   width: 100%
+  @media only screen and (max-width: 500px)
+    overflow-x: auto
+    gap: 20px
+    padding: 0 20px
