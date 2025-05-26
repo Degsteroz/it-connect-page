@@ -1,0 +1,76 @@
+.summerFestHeader
+  width: 100vw
+  height: 100vh
+  z-index: 1
+
+.summerFestHeaderTextBlock
+  color: white
+  text-align: center
+  font-family: var(--font-permanent),serif
+  .title
+    font-size: 80px
+    margin-bottom: 50px
+    &:after
+      content: ""
+      position: absolute
+      top: 30px
+      left: 50%
+      transform: translateX(-50%) rotate(-2deg)
+      border-radius: 16px
+      height: 75px
+      width: 600px
+      background: #26a9d8
+      margin-top: 16px
+      z-index: -1
+.info
+  font-size: 40px
+  margin-bottom: 80px
+
+.ticketCard
+  display: flex
+  flex-direction: column
+  width: 400px
+  height: 300px
+  border: #26a9d8 4px solid
+  border-radius: 12px
+  transition: background 0.3s linear
+  background: rgba(38, 169, 216, 0.48)
+  &:hover
+    color: #3F195B
+    background: #26a9d8
+  .cardTitle
+    font-size: 40px
+    margin-bottom: 45px
+    position: relative
+    &.early
+      &:after
+        content: "DON'T MISS OUT!"
+        position: absolute
+        font-size: 18px
+        top: 45px
+        left: 50%
+        transform: translateX(-50%) rotate(-2deg)
+        border-radius: 16px
+        height: 25px
+        width: 200px
+        background: #c626d8
+        z-index: 1
+  .price
+    font-size: 65px
+    line-height: 1
+    margin-bottom: 30px
+
+  .label
+    font-size: 30px
+.accent
+  margin-top: 20px
+  font-size: 30px
+  animation: glow 2s linear infinite
+
+@keyframes glow
+  0%
+    color: #bdef8e
+  50%
+    color: white
+  100%
+    color: #bdef8e
