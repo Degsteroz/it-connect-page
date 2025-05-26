@@ -17,10 +17,12 @@ const logos = [
   { id: 'peredelano_raqnst', src: 'peredelano_raqnst.png' },
   { id: 'fgqhgssduergkjh3nrof', src: 'fgqhgssduergkjh3nrof.svg' },
   { id: 'opyatEti_gqipkx', src: 'opyatEti_gqipkx.png' },
+  { id: 'Omnipet-logo_i4w90m.svg', src: 'Omnipet-logo_i4w90m.svg' },
   { id: 'm9ak51effaiqbgalodsz', src: 'm9ak51effaiqbgalodsz.svg' },
   { id: 'ciderrs_q24v8s', src: 'ciderrs_q24v8s.png' },
   { id: 'CDT_HUB_2_hoaxj8', src: 'CDT_HUB_2_hoaxj8' },
   { id: 'Лого_KO-KO_без_фона_agt7ed', src: 'kokologo' },
+  { id: 'Yandex_logo_2021_Russian_io4snr.svg', src: 'Yandex_logo_2021_Russian_io4snr.svg' },
   { id: 'startit_logo-vertikalni-crni_RGB_yhewer', src: 'startit_logo-vertikalni-crni_RGB_yhewer' },
 ];
 

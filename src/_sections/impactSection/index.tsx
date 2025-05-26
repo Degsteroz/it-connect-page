@@ -8,7 +8,7 @@ export default function ImpactSection() {
   const stats = [
     {
       title: 'community members',
-      count: 4000,
+      count: 5000,
       divider: 1000,
     },
     {

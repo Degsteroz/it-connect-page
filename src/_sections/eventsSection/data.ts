@@ -32,6 +32,61 @@ export type Network = {
 
 export const events: (Meetup | Network)[] = [
   {
+    title: 'Pixel Battle',
+    date: '27.04.2025',
+    statistic: {
+      speakers: 3,
+      organizers: 10,
+      participants: 100,
+      duration: 4
+    },
+    tags: ['Battle', 'Debates', 'IT Connect'],
+    topicList: [
+      'Design is a religion',
+      'Bad Advice for Designers from a frontender',
+      'Debates between designers and developers'
+    ],
+    link: 'https://disk.yandex.ru/d/oXxw-vY6cPRDHw',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1748280951/it-connect-events/jb3vUwd1LM0_hzgccm.jpg'
+  },
+  {
+    title: 'Blockchain Meetup',
+    date: '22.02.2025',
+    statistic: {
+      speakers: 3,
+      organizers: 10,
+      participants: 70,
+      duration: 4
+    },
+    tags: ['Blockchain', 'IT Connect'],
+    topicList: [
+      'TON Ecosystem Support',
+      'Decision Making When Building Blockchain Applications',
+      'NFT and Crypto in iGaming Projects: Benefits and Challenges'
+    ],
+    link: 'https://disk.yandex.ru/d/oXxw-vY6cPRDHw',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1748280462/it-connect-events/IMAGE_2025-05-26_19_27_39_etx6zc.jpg'
+  },
+  {
+    title: 'IT Battle: IT Connect vs Serbian QA Hub',
+    date: '25.01.2025',
+    statistic: {
+      speakers: 0,
+      organizers: 16,
+      participants: 60,
+      duration: 4
+    },
+    tags: ['QA HUB', 'meetup', 'IT Connect'],
+    topicList: [
+      'Debates between QA and developers'
+    ],
+    link: 'https://disk.yandex.ru/d/uGqId22YrG14mQ',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1748279706/it-connect-events/IMAGE_2025-05-26_19_15_02_nmem2q.jpg'
+  },
+  {
     title: 'IT Connect: AI в действии',
     date: '07.12.2024',
     statistic: {
