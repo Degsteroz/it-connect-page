@@ -1,79 +1,66 @@
+'use client';
 import React from 'react';
 import { Flex } from 'antd';
+import Link from 'next/link';
+import Image from 'next/image';
+
+import { ArrowDownOutlined } from '@ant-design/icons';
+
+import { useViewPort } from '@/_hooks';
 
 import styles from './styles.module.sass';
-import Link from 'next/link';
 
-const ticketLink = 'https://tic.rs/en/belgrade/events/parties-19/it-summer-fest-1369';
+const imageUrl = 'https://res.cloudinary.com/dtecpsig5/image/upload/v1748048678/it-connect/4_fohzMeE08ss7-VLzC44B_OY2pZWqCxkYfOlU8lrlRL29aTvObS58hiVlfLPlWczz5NrK9Q9fBbv9CUFtjpNQ_3D_3D_uyqyrp';
 
 export default function SummerFestHeader() {
+  const { isMobile } = useViewPort();
   return (
-    <Flex
-      align="flex-start"
-      justify='center'
-      className={styles.summerFestHeader}
-    >
-      <div className={styles.summerFestHeaderTextBlock}>
-        <h1 className={styles.title}>
-          IT <span style={{ color: '#bdef8e' }}>SUMMER</span> FEST
-        </h1>
-        <Flex
-          className={styles.info}
-          gap={20}
-          vertical
-        >
-          <div>
-            16 <span style={{ color: '#bdef8e' }}>August,</span> Saturday, 12:00
-          </div>
-          <div>
-            Dorćol Platz, <span style={{ color: '#bdef8e' }}>Belgrade,</span> Dobračina 59
-          </div>
-        </Flex>
+    <div className={styles.summerFestHeader}>
+      <Image
+        src={imageUrl}
+        width={1280}
+        height={768}
+        alt=""
+        style={{
+          width: isMobile ? 'auto' : '100vw',
+          height: isMobile ? '100vh' : 'auto'
+        }}
+        className={styles.backgroundImage}
+      />
+      <Flex
+        align="center"
+        justify='center'
+        style={{
+          height: '100%'
+        }}
+      >
+        <div className={styles.summerFestHeaderTextBlock}>
+          <h1 className={styles.title}>
+            IT <span style={{ color: '#82ff08' }}>SUMMER</span> FEST
+          </h1>
 
-        <Flex
-          gap={20}
-          align="center"
-          justify="center"
-        >
-          <Link
-            className={styles.ticketCard}
-            href={ticketLink}
-            target="_blank"
+          <Flex
+            className={styles.info}
+            gap={20}
+            vertical
           >
-            <div className={`${styles.cardTitle} ${styles['early']}`}>
-              EARLY BIRD
+            <div>
+              16 <span style={{ color: '#82ff08' }}>August,</span> Saturday, 12:00
             </div>
-
-            <div className={styles.price}>
-              5000 rsd
+            <div>
+              Dorćol Platz, <span style={{ color: '#82ff08' }}>Belgrade,</span> Dobračina 59
             </div>
+          </Flex>
+        </div>
 
-            <div className={styles.label}>
-              GET NOW!
-            </div>
-          </Link>
-
-          <Link
-            className={styles.ticketCard}
-            href={ticketLink}
-            target="_blank"
-          >
-            <div className={styles.cardTitle}>
-              REGULAR
-            </div>
-
-            <div className={styles.price}>
-              6000 rsd
-            </div>
-
-            <div className={styles.label}>
-              GET NOW!
-            </div>
-          </Link>
-        </Flex>
-
-        <div className={styles.accent}>First 200 tickets for 5.000 RSD only!</div>
-      </div>
-    </Flex>
+        <Link href="#tickets" className={styles.callToAction}>
+          <Flex gap={20}>
+            <ArrowDownOutlined />
+            BUY TICKETS NOW
+            <ArrowDownOutlined />
+          </Flex>
+        </Link>
+      </Flex>
+    </div>
   );
 };

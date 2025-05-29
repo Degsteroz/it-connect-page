@@ -2,14 +2,35 @@
   width: 100vw
   height: 100vh
   z-index: 1
+  flex: 0 0 auto
+  overflow: hidden
+  position: relative
+  background: #3F195B
+  @media only screen and (max-width: 500px)
+    padding: 0 20px
+
+.backgroundImage
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  opacity: 0.5
+  filter: blur(7px)
 
 .summerFestHeaderTextBlock
   color: white
   text-align: center
   font-family: var(--font-permanent),serif
+  position: relative
   .title
     font-size: 80px
-    margin-bottom: 50px
+    margin-bottom: 30px
+    position: relative
+    -webkit-background-clip: text
+    color: white
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+    @media only screen and (max-width: 500px)
+      font-size: 60px
     &:after
       content: ""
       position: absolute
@@ -22,55 +43,38 @@
       background: #26a9d8
       margin-top: 16px
       z-index: -1
+      @media only screen and (max-width: 500px)
+        top: 20px
+        height: 200px
 .info
   font-size: 40px
-  margin-bottom: 80px
+  font-family: var(--font-poppins), sans-serif
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+  @media only screen and (max-width: 500px)
+    font-size: 25px
 
-.ticketCard
-  display: flex
-  flex-direction: column
-  width: 400px
-  height: 300px
-  border: #26a9d8 4px solid
-  border-radius: 12px
-  transition: background 0.3s linear
-  background: rgba(38, 169, 216, 0.48)
-  &:hover
-    color: #3F195B
-    background: #26a9d8
-  .cardTitle
-    font-size: 40px
-    margin-bottom: 45px
-    position: relative
-    &.early
-      &:after
-        content: "DON'T MISS OUT!"
-        position: absolute
-        font-size: 18px
-        top: 45px
-        left: 50%
-        transform: translateX(-50%) rotate(-2deg)
-        border-radius: 16px
-        height: 25px
-        width: 200px
-        background: #c626d8
-        z-index: 1
-  .price
-    font-size: 65px
-    line-height: 1
-    margin-bottom: 30px
+.callToAction
+  position: absolute
+  font-size: 40px
+  bottom: 100px
+  left: 50%
+  transform: translateX(-50%)
+  justify-content: center
+  animation: shake 0.9s linear
+  animation-iteration-count: 10
+  color: white
+  font-family: var(--font-poppins), sans-serif
 
-  .label
-    font-size: 30px
-.accent
-  margin-top: 20px
-  font-size: 30px
-  animation: glow 2s linear infinite
+  @media only screen and (max-width: 500px)
+    font-size: 25px
+    width: fit-content
+    white-space: nowrap
 
-@keyframes glow
+
+@keyframes shake
   0%
-    color: #bdef8e
-  50%
-    color: white
+    bottom: 100px
+  70%
+    bottom: 110px
   100%
-    color: #bdef8e
+    bottom: 100px
