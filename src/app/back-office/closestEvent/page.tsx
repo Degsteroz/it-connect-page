@@ -12,7 +12,8 @@ import {
   Flex,
   Form,
   Input,
-  notification, Typography,
+  notification,
+  Typography,
   Upload,
   UploadProps,
 } from 'antd';

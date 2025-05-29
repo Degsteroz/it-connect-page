@@ -1,11 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Onest, Poppins } from 'next/font/google';
+import { Onest, Poppins, Permanent_Marker } from 'next/font/google';
 import './globals.css';
 
 const onest = Onest({
   variable: '--font-onest',
   subsets: ['latin'],
+});
+
+const permanent = Permanent_Marker({
+  variable: '--font-permanent',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 const poppins = Poppins({
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable} ${poppins.variable}`} id="homePage">
+      <body className={`${onest.variable} ${poppins.variable} ${permanent.variable}`} id="homePage">
         {children}
       </body>
     </html>
