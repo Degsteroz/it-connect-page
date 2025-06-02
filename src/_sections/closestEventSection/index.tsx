@@ -115,13 +115,14 @@ export default function ClosestEventSection() {
 
         <div className={styles.secondRow}>
           <div className={styles.leftSide}>
-            <Image
-              src={getImageUrl(closestEvent.image)}
-              alt=""
-              width={150}
-              height={150}
-              style={{ borderRadius: '50%' }}
-            />
+            <div className={styles.eventImageWrapper}>
+              <Image
+                src={getImageUrl(closestEvent.image)}
+                alt=""
+                width={200}
+                height={200}
+              />
+            </div>
 
             <div className={styles.textBlock}>
               <div className={styles.title}>
@@ -169,7 +170,7 @@ export default function ClosestEventSection() {
           src={background}
           alt="background image"
           className={styles.image}
-          width={1321}
+          fill
         />
       </div>
     </section>
