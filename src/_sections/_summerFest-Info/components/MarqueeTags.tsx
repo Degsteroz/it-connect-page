@@ -24,17 +24,15 @@ const MarqueeTags = () => {
   if (isMobile) {
     return (
       <div className={styles.tagWrapper}>
-        {[...tags]
-          .sort((a, b) => b.text.length - a.text.length )
-          .map((tag) => (
-            <Tag
-              key={tag.text}
-              className={styles.tag}
-              color={tag.color}
-            >
-              {tag.text}
-            </Tag>
-          ))}
+        {tags.map((tag) => (
+          <Tag
+            key={tag.text}
+            className={styles.tag}
+            color={tag.color}
+          >
+            {tag.text}
+          </Tag>
+        ))}
       </div>
     );
   };

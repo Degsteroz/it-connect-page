@@ -70,7 +70,7 @@ const FooterSection = () => (
         >
           <Link href="https://buymeacoffee.com/itconnect">Buy me a coffee</Link>
           <Link href="https://buymeacoffee.com/itconnect/extras">Shop</Link>
-          <Link href="/merch">OUR MERCH</Link>
+          {/*<Link href="/merch">OUR MERCH</Link>*/}
         </Flex>
       </Flex>
 

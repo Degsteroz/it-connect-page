@@ -37,6 +37,7 @@ export default function SummerFestTickets() {
           <div className={styles.label}>
             GET NOW!
           </div>
+          <div className={styles.accent}>First 200 tickets for 5.000 RSD only!</div>
         </Link>
 
         <Link
@@ -57,8 +58,6 @@ export default function SummerFestTickets() {
           </div>
         </Link>
       </Flex>
-
-      <div className={styles.accent}>First 200 tickets for 5.000 RSD only!</div>
     </div>
   );
 };

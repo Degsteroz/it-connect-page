@@ -117,7 +117,7 @@ const EventCarousel = () => {
                     <div
                       style={{
                         color: 'white !important',
-                        fontSize: '30px'
+                        fontSize: isMobile ? '24px' : '30px'
                       }}
                     >
                       {`${card.emoji} ${card.title}`}
@@ -126,7 +126,8 @@ const EventCarousel = () => {
                     <div
                       style={{
                         color: 'white !important',
-                        fontSize: '20px'
+                        fontSize: '20px',
+                        textAlign: isMobile ? 'left' : 'center'
                       }}
                     >
                       {card.description}
