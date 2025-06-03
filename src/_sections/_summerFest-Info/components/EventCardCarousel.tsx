@@ -21,7 +21,7 @@ const eventCards = [
     title: '4 Dynamic Stages',
     description:
       'Four parallel stages featuring talks on development, AI, cloud technologies, and product thinking. Expect real-world case studies, live discussions, and hands-on insights from practicing experts.',
-    photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_400/v1748437515/it-connect/53a279c6-b733-48ef-94eb-6f334b38f6de.png'
+    photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_400/v1748941981/it-connect/IMG_8717-full_sxhzap.jpg'
   },
   {
     key: 'speakers',
@@ -29,7 +29,7 @@ const eventCards = [
     title: '30+ Speakers',
     description:
       'Over 30 industry professionals: engineers, team leads, founders, and product managers. Topics range from system architecture to team processes and tech trends.',
-    photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_400/v1748437707/it-connect/26d07194-5038-44bc-b31e-53e3dd01205b.png'
+    photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_400/v1748941916/it-connect/IMG_8335-full_qagniy.jpg'
   },
   {
     key: 'expo',

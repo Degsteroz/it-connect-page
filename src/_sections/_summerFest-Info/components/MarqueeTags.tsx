@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tag } from 'antd';
 
 import { useViewPort } from '@/_hooks';
@@ -20,6 +20,11 @@ const tags = [
 
 const MarqueeTags = () => {
   const { isMobile } = useViewPort();
+  const [tagWidth, setTagWidth] = useState(100);
+  useEffect(() => {
+    if (isMobile) return;
+    setTagWidth(window.innerWidth / (tags.length));
+  }, [isMobile]);
 
   if (isMobile) {
     return (
@@ -29,6 +34,7 @@ const MarqueeTags = () => {
             key={tag.text}
             className={styles.tag}
             color={tag.color}
+            style={{ minWidth: isMobile ? 'auto' : tagWidth }}
           >
             {tag.text}
           </Tag>
