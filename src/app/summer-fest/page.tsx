@@ -9,7 +9,7 @@ import SummerFestTickets from '@/_sections/_summerFest-Tickets';
 import SummerFestInfo from '@/_sections/_summerFest-Info';
 // import EventDetails from '@/_sections/_summerFest_EventDetails';
 // import PartnershipBlock from '@/_sections/_summerFest_ContactUs';
-// import FooterSection from '@/_sections/footerSection';
+import FooterSection from '@/_sections/footerSection';
 
 import styles from './styles.module.sass';
 import SummerFestSpeakers from '@/_sections/_summerFest-Speakers';
@@ -42,7 +42,7 @@ export default function SummerFest() {
       {/*<EventDetails />*/}
 
       {/*<PartnershipBlock />*/}
-      {/*<FooterSection />*/}
+      <FooterSection />
     </div>
   );
 };
