@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 
-import MarqueeTags from '@/_sections/_summerFest-Info/components/MarqueeTags';
-import EventCarousel from '@/_sections/_summerFest-Info/components/EventCardCarousel';
+import MarqueeTags from '@/_sections/_summerFestMain/_summerFest-Info/components/MarqueeTags';
+import EventCarousel from '@/_sections/_summerFestMain/_summerFest-Info/components/EventCardCarousel';
 
 import styles from './styles.module.sass';
 
