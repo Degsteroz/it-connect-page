@@ -1,0 +1,41 @@
+.marquee_container
+  overflow: hidden
+  background-color: rgba(244, 244, 244, 0.1)
+  padding: 0.5rem 0
+  white-space: nowrap
+  width: 100vw
+
+.marquee_track
+  display: flex
+  animation: scroll 30s linear infinite
+  padding: 10px 0
+
+.tagWrapper
+  display: flex
+  width: 100vw
+  justify-content: space-around
+  flex: 0 0 100vw
+  row-gap: 10px
+  @media only screen and (max-width: 500px)
+    flex-wrap: wrap
+    flex: 0 0 auto
+    margin: 20px auto 0
+    padding: 0 10px
+
+
+
+.tag
+  border-radius: 30px
+  font-size: 20px
+  padding: 10px
+  color: #3F195B
+  overflow: hidden
+  @media only screen and (max-width: 500px)
+    font-size: 20px
+    padding: 5px 10px
+
+@keyframes scroll
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-100%)

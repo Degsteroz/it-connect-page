@@ -1,0 +1,49 @@
+.infoPage
+  position: relative
+  width: 100vw
+  color: white
+  overflow: hidden
+  justify-content: center
+  padding: 40px 0
+  background: linear-gradient(120deg, #FF6F61, #00C9A7, #A8E6CF)
+  display: block
+  height: fit-content
+  @media only screen and (max-width: 500px)
+    padding: 20px 0
+
+.contentWrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100vw
+  .title
+    font-size: 70px
+    font-family: var(--font-permanent),serif
+    margin: 0 auto
+    line-height: 1
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+  .subtitle
+    font-size: 40px
+    font-family: var(--font-poppins), sans-serif
+    margin: 0 auto 30px
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+
+  @media only screen and (max-width: 500px)
+    text-align: center
+    width: 100%
+    .title
+      font-size: 50px
+      width: fit-content
+      padding: 0 20px
+    .subtitle
+      font-size: 30px
+      width: fit-content
+
+.backgroundImage
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  opacity: 0.5
+  filter: blur(7px)
+
