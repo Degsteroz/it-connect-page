@@ -5,16 +5,19 @@ import MarqueeTags from '@/_sections/_summerFest-Info/components/MarqueeTags';
 import EventCarousel from '@/_sections/_summerFest-Info/components/EventCardCarousel';
 
 import styles from './styles.module.sass';
+import { HeatMapOutlined } from '@ant-design/icons';
 
 export default function SummerFestInfo() {
   return (
     <div className={styles.infoPage}>
       <div className={styles.contentWrapper}>
         <div className={styles.title}>
-          About <span style={{ color: '#82ff08' }}>the</span> event
+          About the event
         </div>
         <div className={styles.subtitle}>
-          What <span style={{ color: '#82ff08' }}>to</span> expect
+          <HeatMapOutlined />
+          <div>What to expect</div>
+          <HeatMapOutlined />
         </div>
         <EventCarousel />
         <MarqueeTags />

@@ -41,30 +41,37 @@ const MarqueeTags = () => {
         ))}
       </div>
     );
-  };
+  }
+
   return (
     <div className={styles.marquee_container}>
       <div className={styles.marquee_track}>
         <div className={styles.tagWrapper}>
           {tags.map((tag) => (
-            <Tag
-              key={tag.text}
-              className={styles.tag}
-              color={tag.color}
-            >
-              {tag.text}
-            </Tag>
+            <>
+              <div
+                key={tag.text}
+                className={styles.tag}
+              >
+                {tag.text}
+              </div>
+              <div>夏の</div>
+            </>
           ))}
         </div>
         <div className={styles.tagWrapper}>
-          {tags.map((tag) => (
-            <Tag
-              key={`${tag.text}-second`}
-              className={styles.tag}
-              color={tag.color}
-            >
-              {tag.text}
-            </Tag>
+          {tags.map((tag, index) => (
+            <>
+              <div
+                key={`${tag.text}-second`}
+                className={styles.tag}
+              >
+                {tag.text}
+              </div>
+              {index !== tags.length - 1 && (
+                <div>夏の</div>
+              )}
+            </>
           ))}
         </div>
       </div>

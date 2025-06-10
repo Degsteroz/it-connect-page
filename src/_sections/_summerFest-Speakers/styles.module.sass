@@ -1,0 +1,124 @@
+.summerFestSpeakers
+  display: flex
+  flex-direction: column
+  width: 100vw
+  padding: 20px
+  border-top: 40px solid black
+
+.cyberBarcode
+  width: 80px
+  height: 40px
+  background: repeating-linear-gradient(to right, #000 0px, #000 2px, #fff 2px, #fff 4px)
+  border: 1px solid #ff0033
+
+.speakersTitle
+  font-size: 68px
+  margin: 0 auto
+  position: relative
+  display: flex
+  &:after
+    content: ''
+    width: 100%
+    height: 50px
+    background: #bd3614
+    position: absolute
+    left: -50%
+    z-index: -2
+
+.cardsWrapper
+  display: flex
+  flex-wrap: wrap
+  gap: 20px
+  justify-content: center
+  padding: 2rem
+
+.trackCard
+  flex: 0 0 40%
+  background: white
+  border: 1px solid #bd3614
+  border-radius: 12px
+  padding: 1.5rem
+  width: 300px
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  font-family: 'Courier New', monospace
+  color: black
+
+.trackTitle
+  font-size: 1.1rem
+  font-weight: bold
+  color: #bd3614
+  border-bottom: 1px dashed #bd3614
+  padding-bottom: 0.25rem
+
+.trackDescription
+  font-size: 0.9rem
+  color: #333
+  line-height: 1.4
+
+.speakersList
+  display: flex
+  flex-direction: column
+  gap: 0.75rem
+
+.speakerCard
+  display: flex
+  align-items: center
+  gap: 0.75rem
+  padding: 0.5rem
+  border-left: 2px solid #ff147f
+  background: #f9f9f9
+  border-radius: 6px
+  @media only screen and (max-width: 500px)
+    flex-direction: column
+
+.speakerPhotoWrapper
+  position: relative
+  width: 150px
+  height: 150px
+  border-radius: 50%
+  border: 1px solid #bd3614
+  overflow: hidden
+  display: flex
+  align-items: flex-start
+  flex: 0 0 150px
+
+.speakerPhoto
+  width: 100%
+  height: auto
+
+.speakerInfo
+  display: flex
+  flex-direction: column
+
+.speakerNameBlock
+  display: flex
+  align-items: center
+  gap: 10px
+  @media only screen and (max-width: 500px)
+    flex-direction: column-reverse
+    align-items: flex-start
+    gap: 0
+
+.speakerName
+  font-weight: bold
+  font-size: 0.9rem
+  color: black
+
+.speakerTitle
+  font-size: 0.8rem
+  color: #bd3614
+
+.speakerSpeech
+  font-size: 0.8rem
+  margin-top: 10px
+  @media only screen and (max-width: 500px)
+    text-align: left
+    margin-top: 10px
+    font-size: 14px
+
+
+.speakerCountry
+  font-size: 0.75rem
+  color: #666

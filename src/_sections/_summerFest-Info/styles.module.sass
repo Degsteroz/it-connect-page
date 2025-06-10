@@ -1,11 +1,11 @@
 .infoPage
   position: relative
   width: 100vw
-  color: white
+  color: black
   overflow: hidden
   justify-content: center
   padding: 40px 0
-  background: linear-gradient(120deg, #FF6F61, #00C9A7, #A8E6CF)
+  background: white
   display: block
   height: fit-content
   @media only screen and (max-width: 500px)
@@ -18,15 +18,30 @@
   width: 100vw
   .title
     font-size: 70px
-    font-family: var(--font-permanent),serif
     margin: 0 auto
     line-height: 1
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+    font-weight: bold
+    position: relative
+    z-index: 5
   .subtitle
     font-size: 40px
-    font-family: var(--font-poppins), sans-serif
     margin: 0 auto 30px
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+    position: relative
+    z-index: 4
+    background: black
+    color: #fff
+    display: flex
+    gap: 20px
+
+    &:after
+      content: ''
+      position: absolute
+      top: -40px
+      left: 0
+      background: rgba(189, 54, 20, 0.22)
+      width: 400px
+      height: 50px
+      z-index: -4
 
   @media only screen and (max-width: 500px)
     text-align: center

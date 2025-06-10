@@ -7,11 +7,13 @@ import logo from '@/_assets/headerSection/backgroundLogo.svg';
 import SummerFestHeader from '@/_sections/_summerFest-Header';
 import SummerFestTickets from '@/_sections/_summerFest-Tickets';
 import SummerFestInfo from '@/_sections/_summerFest-Info';
-import EventDetails from '@/_sections/_summerFest_EventDetails';
-import PartnershipBlock from '@/_sections/_summerFest_ContactUs';
-import FooterSection from '@/_sections/footerSection';
+// import EventDetails from '@/_sections/_summerFest_EventDetails';
+// import PartnershipBlock from '@/_sections/_summerFest_ContactUs';
+// import FooterSection from '@/_sections/footerSection';
 
 import styles from './styles.module.sass';
+import SummerFestSpeakers from '@/_sections/_summerFest-Speakers';
+import SummerFestFormats from '@/_sections/_summerFest-Formats';
 
 export const metadata: Metadata = {
   title: 'IT SUMMER FEST 2025 | IT Connect Belgrade',
@@ -34,10 +36,13 @@ export default function SummerFest() {
 
       <div id="tickets" />
       <SummerFestTickets />
-      <EventDetails />
 
-      <PartnershipBlock />
-      <FooterSection />
+      <SummerFestSpeakers />
+      <SummerFestFormats />
+      {/*<EventDetails />*/}
+
+      {/*<PartnershipBlock />*/}
+      {/*<FooterSection />*/}
     </div>
   );
 };

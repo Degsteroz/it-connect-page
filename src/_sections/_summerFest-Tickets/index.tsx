@@ -3,6 +3,7 @@ import { Flex } from 'antd';
 import Link from 'next/link';
 
 import styles from './styles.module.sass';
+import { PayCircleOutlined } from '@ant-design/icons';
 
 const ticketLink = 'https://tic.rs/en/belgrade/events/parties-19/it-summer-fest-1369';
 
@@ -10,10 +11,12 @@ export default function SummerFestTickets() {
   return (
     <div className={styles.ticketSection}>
       <div className={styles.title}>
-        Tickets <span style={{ color: '#82ff08' }}>&</span> Pricing
+        <PayCircleOutlined />
+        <div>Tickets & Pricing</div>
+        <PayCircleOutlined />
       </div>
       <div className={styles.subtitle}>
-        Don’t miss out — <span style={{ color: '#82ff08' }}>limited</span> availability!
+        Don’t miss out — limited availability!
       </div>
       <Flex
         gap={20}
@@ -26,6 +29,13 @@ export default function SummerFestTickets() {
           href={ticketLink}
           target="_blank"
         >
+          {/*<Image*/}
+          {/*  src={imageUrl}*/}
+          {/*  alt={'decoration'}*/}
+          {/*  className={styles.image}*/}
+          {/*  width={672}*/}
+          {/*  height={404}*/}
+          {/*/>*/}
           <div className={`${styles.cardTitle} ${styles['early']}`}>
             EARLY BIRD
           </div>
@@ -45,6 +55,13 @@ export default function SummerFestTickets() {
           href={ticketLink}
           target="_blank"
         >
+          {/*<Image*/}
+          {/*  src={imageUrl}*/}
+          {/*  alt={'decoration'}*/}
+          {/*  className={`${styles.image} ${styles.revert}`}*/}
+          {/*  width={672}*/}
+          {/*  height={404}*/}
+          {/*/>*/}
           <div className={styles.cardTitle}>
             REGULAR
           </div>
@@ -56,6 +73,7 @@ export default function SummerFestTickets() {
           <div className={styles.label}>
             GET NOW!
           </div>
+          <div style={{ height: '35px' }}/>
         </Link>
       </Flex>
     </div>

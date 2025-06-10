@@ -1,3 +1,9 @@
+$red: #ff3c00
+$black: #000
+$red: #ff3c00
+$accent: #7030A0
+$blue: #00D6E7
+
 .summerFestHeader
   width: 100vw
   height: 100vh
@@ -5,43 +11,50 @@
   flex: 0 0 auto
   overflow: hidden
   position: relative
-  background: #3F195B
+  background: white
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
   @media only screen and (max-width: 500px)
     padding: 0 20px
     max-height: 700px
 
-.backgroundImage
-  position: absolute
-  top: 0
-  left: 0
-  z-index: 0
-  opacity: 0.5
-  filter: blur(7px)
-
 .summerFestHeaderTextBlock
-  color: white
-  text-align: center
-  font-family: var(--font-permanent),serif
+  text-align: left
   position: relative
+  padding-left: 100px
+  color: black
+  display: flex
+  gap: 30px
+  .japan
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    color: black
+    font-size: 60px
+    border: 10px solid black
+    width: 300px
+    height: 250px
+  .text
+    display: flex
+    flex-direction: column
   .title
     font-size: 80px
-    margin-bottom: 30px
     position: relative
     -webkit-background-clip: text
-    color: white
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+
     @media only screen and (max-width: 500px)
       font-size: 60px
     &:after
       content: ""
       position: absolute
-      top: 30px
-      left: 50%
-      transform: translateX(-50%) rotate(-2deg)
-      border-radius: 16px
-      height: 75px
+      top: -80%
+      left: -50%
+      height: 400px
       width: 600px
-      background: #26a9d8
+      background: #bd3614
       margin-top: 16px
       z-index: -1
       @media only screen and (max-width: 500px)
@@ -50,21 +63,18 @@
 .info
   font-size: 40px
   font-family: var(--font-poppins), sans-serif
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
   @media only screen and (max-width: 500px)
     font-size: 25px
 
 .callToAction
-  position: absolute
-  font-size: 40px
-  bottom: 100px
-  left: 50%
-  transform: translateX(-50%)
-  justify-content: center
-  animation: shake 0.9s linear
-  animation-iteration-count: 10
-  color: white
+  font-size: 30px
+  justify-content: flex-start
   font-family: var(--font-poppins), sans-serif
+  width: fit-content
+  color: white
+  background: black
+  &:hover
+    color: #bd3614
 
   @media only screen and (max-width: 500px)
     font-size: 25px
@@ -73,10 +83,92 @@
     bottom: 30px
 
 
-@keyframes shake
+.tickerWrapper
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 102vw
+  height: 3rem
+  background-color: $red
+  transform: rotate(-2.5deg)
+  z-index: 9999
+  overflow: hidden
+  display: flex
+  align-items: center
+
+.tickerContent
+  display: flex
+  animation: ticker-loop 20s linear infinite
+  font-family: 'Courier New', monospace
+  font-size: 1.3rem
+  color: white
+  white-space: nowrap
+
+.tickerText
+  display: inline-block
+  padding-right: 4rem
+
+@keyframes ticker-loop
   0%
-    bottom: 100px
-  70%
-    bottom: 110px
+    transform: translateX(0)
   100%
-    bottom: 100px
+    transform: translateX(-50%)
+
+
+.decals
+  position: absolute
+  top: 5%
+  left: 3%
+  z-index: 4
+  pointer-events: none
+  font-family: 'Courier New', monospace
+  color: $black
+
+.stamp
+  font-size: 0.8rem
+  color: #111
+  background: #fff
+  border: 1px dashed $red
+  padding: 0.2rem 0.5rem
+  margin-bottom: 0.5rem
+  display: inline-block
+
+.port
+  font-size: 0.75rem
+  color: $red
+  margin-left: 1rem
+
+.codeblock
+  font-size: 0.7rem
+  background: $black
+  color: $blue
+  padding: 0.1rem 0.3rem
+  margin-left: 0.5rem
+
+.cross
+  position: absolute
+  top: 120px
+  left: 60px
+  width: 20px
+  height: 20px
+  background: transparent
+  border: none
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 0
+    width: 2px
+    height: 100%
+    background: $red
+  &::after
+    transform: rotate(90deg)
+    transform-origin: center
+.jpLabel
+  position: absolute
+  top: 200px
+  left: -40px
+  font-size: 1rem
+  transform: rotate(-90deg)
+  color: $accent
+  font-family: 'Noto Sans JP', sans-serif

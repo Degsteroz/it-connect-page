@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import { Card, Tag } from 'antd';
+import { Card } from 'antd';
 import Image from 'next/image';
 import { Settings } from '@ant-design/react-slick';
 
@@ -17,7 +17,6 @@ const { Meta } = Card;
 const eventCards = [
   {
     key: 'stages',
-    emoji: '🚀',
     title: '4 Dynamic Stages',
     description:
       'Four parallel stages featuring talks on development, AI, cloud technologies, and product thinking. Expect real-world case studies, live discussions, and hands-on insights from practicing experts.',
@@ -25,7 +24,6 @@ const eventCards = [
   },
   {
     key: 'speakers',
-    emoji: '🎤',
     title: '30+ Speakers',
     description:
       'Over 30 industry professionals: engineers, team leads, founders, and product managers. Topics range from system architecture to team processes and tech trends.',
@@ -33,7 +31,6 @@ const eventCards = [
   },
   {
     key: 'expo',
-    emoji: '🎯',
     title: 'Tech Expo Zone',
     description:
       'A demo zone with booths from IT companies and services. See new products in action, talk to their developers, and ask questions on the spot.',
@@ -41,7 +38,6 @@ const eventCards = [
   },
   {
     key: 'job',
-    emoji: '💼',
     title: 'Job Fair',
     description:
       'Meet recruiters and company representatives who are currently hiring. You can leave your contacts or even have a quick interview right at the event.',
@@ -49,7 +45,6 @@ const eventCards = [
   },
   {
     key: 'bbq',
-    emoji: '🔥',
     title: 'Stand-up & BBQ',
     description:
       'In the evening: informal part with stand-up and food in the open air. Right next to the main venue — no need to go anywhere else.',
@@ -72,25 +67,25 @@ const EventCarousel = () => {
     autoplaySpeed: 5000,
     autoplay: true,
     variableWidth: true,
-    afterChange: (_number: number) => {
-      setSelected(_number);
+    beforeChange: (_number: number, nextSlide) => {
+      setSelected(nextSlide);
     }
   };
 
   const { isMobile } = useViewPort();
 
   const buttons = eventCards.map((card, index) => {
-    const { key, emoji, title } = card;
+    const { key, title } = card;
 
     return (
-      <Tag
+      <div
         key={key}
-        className={styles.button}
+        className={styles.button + ' ' + (index === selected ? styles.active : '')}
         color={index === selected ? 'blue' : 'green'}
         onClick={() => sliderRef.current?.slickGoTo(index)}
       >
-        {`${emoji} ${title}`}
-      </Tag>
+        {title}
+      </div>
     );
   });
 
@@ -120,7 +115,7 @@ const EventCarousel = () => {
                         fontSize: isMobile ? '24px' : '30px'
                       }}
                     >
-                      {`${card.emoji} ${card.title}`}
+                      {card.title}
                     </div>}
                   description={
                     <div
@@ -139,7 +134,7 @@ const EventCarousel = () => {
           ))}
         </div>
       );
-    };
+    }
 
     return (
       <div style={{
@@ -171,7 +166,7 @@ const EventCarousel = () => {
                         fontSize: '30px'
                       }}
                     >
-                      {`${card.emoji} ${card.title}`}
+                      {card.title}
                     </div>}
                   description={
                     <div

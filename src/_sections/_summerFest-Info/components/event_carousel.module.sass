@@ -33,39 +33,51 @@
 
 .button
   font-size: 24px
-  border-radius: 30px
+  border-radius: 0
+  border: 2px #bd3614 solid
   cursor: pointer
-  padding: 10px 15px
+  padding: 5px
   margin: 0
+  color: #bd3614
+  font-family: 'Courier New', monospace
+  &.active
+    border: 1px dashed #bd3614
 
 .card
   max-width: 400px
   width: 100%
-  border-radius: 12px
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+  border-radius: 0
+  padding: 1rem
+  border: #bd3614 1px solid
   transition: transform 0.3s ease
   margin: 0 50px
-  background: rgba(30, 144, 255, 0.25)
+  min-height: 500px
   @media only screen and (max-width: 500px)
     margin: 0
     flex: 0 0 300px
     width: 300px
 
   :global(.ant-card-body)
-    padding: 1rem
-    background: white
+    padding: 10px 0 0
+    background: black
 
   :global(.ant-card-meta-title)
     font-size: 1.1rem
     font-weight: 600
-    color: #333
+    color: white
+    background: black
+
+  :global(.ant-card-cover)
+    img
+      border-radius: 0
 
   :global(.ant-card-meta-description)
     font-size: 0.95rem
     margin-top: 0.5rem
     line-height: 1.5
-    color: #555
-
+    color: white
+    background: black
+    height: 100%
 
 .cardWrapper
   display: flex

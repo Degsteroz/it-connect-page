@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap')
+
+.container
+  max-width: 90vw
+  width: 100%
+  margin: 2rem auto
+  padding: 2rem 3rem
+  background: white
+  color: #111
+  font-family: 'Orbitron', monospace, monospace
+  position: relative
+  border: 3px solid #bd3614
+  box-shadow: none
+  display: flex
+  flex-flow: column
+
+.title
+  position: relative
+  font-size: 3rem
+  text-transform: uppercase
+  letter-spacing: 0.12em
+  font-weight: 900
+  margin-bottom: 2rem
+  padding: 0.2em 0.5em
+  background: #bd3614
+  color: white
+  user-select: none
+
+.cyberGrid
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)
+  background-size: 20px 20px
+
+.formatWrapper
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+
+.format
+  position: relative
+  padding: 1.6rem 2rem
+  border: 2px solid #111
+  margin-bottom: 2.5rem
+  background: #f0f0f0
+  width: 100%
+  flex: 1 1 45%
+
+  &.wide
+    flex: 1 1 100%
+
+  // угловые декоративные элементы (псевдоэлементы) без свечения
+  &::before, &::after
+    content: ''
+    position: absolute
+    width: 24px
+    height: 24px
+    border: 2px solid #111
+    box-sizing: border-box
+
+  &::before
+    top: 8px
+    left: 8px
+    border-top: none
+    border-left: none
+    clip-path: polygon(0 0, 100% 0, 0 100%)
+
+  &::after
+    bottom: 8px
+    right: 8px
+    border-bottom: none
+    border-right: none
+    clip-path: polygon(100% 100%, 0 100%, 100% 0)
+
+.formatHeader
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 1rem
+  position: relative
+  z-index: 2
+
+// Фон для категории — один из цветов с контрастным текстом
+.formatCategory
+  font-weight: 700
+  font-size: 1.6rem
+  text-transform: uppercase
+  letter-spacing: 0.08em
+  padding: 0.2em 0.6em
+  user-select: none
+
+  &.food
+    background: #bd3614
+    color: white
+
+  &.tech
+    background: #111
+    color: white
+
+  &.extraTech
+    background: #e53935 // насыщенный красный
+    color: white
+
+  &.entertainment
+    background: #666
+    color: white
+
+.foodIncludedBadge
+  background: #bd3614
+  color: white
+  font-weight: 700
+  font-size: 0.85rem
+  padding: 4px 14px
+  user-select: none
+  letter-spacing: 0.04em
+
+.formatDescription
+  font-size: 1rem
+  margin-bottom: 1.4rem
+  color: #222
+  line-height: 1.3
+
+.activityList
+  list-style: none
+  padding-left: 0
+  margin: 0
+
+.activityItem
+  border-bottom: 1px solid #ccc
+  padding: 1rem 0
+
+  &:last-child
+    border-bottom: none
+
+.activityName
+  font-weight: 700
+  font-size: 1.2rem
+  margin: 0 0 0.3rem 0
+  color: #bd3614
+
+.activityScene
+  margin: 0 0 0.5rem 0
+  font-size: 0.95rem
+  color: #444
+  font-family: monospace
+
+.activityDescription
+  margin: 0 0 0.4rem 0
+  font-size: 0.95rem
+  color: #222
+  font-style: normal
+
+.activityNote
+  font-size: 0.85rem
+  color: #666
+  font-style: italic
+  margin: 0
