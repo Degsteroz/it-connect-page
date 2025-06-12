@@ -14,6 +14,7 @@ import FooterSection from '@/_sections/footerSection';
 import styles from './styles.module.sass';
 import SummerFestSpeakers from '@/_sections/_summerFest-Speakers';
 import SummerFestFormats from '@/_sections/_summerFest-Formats';
+import SummerFestConfSchedule from '@/_sections/_summerFest-ConfSchedule';
 
 export const metadata: Metadata = {
   title: 'IT SUMMER FEST 2025 | IT Connect Belgrade',
@@ -39,6 +40,7 @@ export default function SummerFest() {
 
       <SummerFestSpeakers />
       <SummerFestFormats />
+      <SummerFestConfSchedule />
       {/*<EventDetails />*/}
 
       {/*<PartnershipBlock />*/}

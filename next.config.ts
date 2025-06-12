@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'avatars0.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'it-conect.notion.site',
         port: '',
         pathname: '/image/**',

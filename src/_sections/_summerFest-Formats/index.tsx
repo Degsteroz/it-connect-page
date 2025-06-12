@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './styles.module.sass';
+
 import { eventFormats } from './data';
+
+import styles from './styles.module.sass';
 
 const categoryClassMap: Record<string, string> = {
   Food: styles.food,
@@ -28,7 +30,7 @@ export default function SummerFestFormats() {
           <li key={activity.id} className={styles.activityItem}>
             <h3 className={styles.activityName}>{activity.name}</h3>
             <p className={styles.activityScene}>
-              <strong>Scene:</strong> {activity.scene}
+              <strong>Zone:</strong> {activity.scene}
             </p>
             {activity.description && (
               <p className={styles.activityDescription}>{activity.description}</p>

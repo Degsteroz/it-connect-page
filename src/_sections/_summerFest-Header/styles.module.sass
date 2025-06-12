@@ -1,6 +1,4 @@
-$red: #ff3c00
 $black: #000
-$red: #ff3c00
 $accent: #7030A0
 $blue: #00D6E7
 
@@ -54,7 +52,7 @@ $blue: #00D6E7
       left: -50%
       height: 400px
       width: 600px
-      background: #bd3614
+      background: #26a9d8
       margin-top: 16px
       z-index: -1
       @media only screen and (max-width: 500px)
@@ -67,14 +65,17 @@ $blue: #00D6E7
     font-size: 25px
 
 .callToAction
+  display: inline-flex
   font-size: 30px
   justify-content: flex-start
   font-family: var(--font-poppins), sans-serif
   width: fit-content
+  min-width: 200px
   color: white
   background: black
+  padding: 0 10px
   &:hover
-    color: #bd3614
+    color: #26a9d8
 
   @media only screen and (max-width: 500px)
     font-size: 25px
@@ -85,11 +86,11 @@ $blue: #00D6E7
 
 .tickerWrapper
   position: absolute
-  bottom: 0
-  left: 0
+  bottom: 50px
+  left: -10px
   width: 102vw
   height: 3rem
-  background-color: $red
+  background-color: #3F195B
   transform: rotate(-2.5deg)
   z-index: 9999
   overflow: hidden
@@ -128,14 +129,14 @@ $blue: #00D6E7
   font-size: 0.8rem
   color: #111
   background: #fff
-  border: 1px dashed $red
+  border: 1px dashed #3F195B
   padding: 0.2rem 0.5rem
   margin-bottom: 0.5rem
   display: inline-block
 
 .port
   font-size: 0.75rem
-  color: $red
+  color: #3F195B
   margin-left: 1rem
 
 .codeblock
@@ -160,7 +161,7 @@ $blue: #00D6E7
     top: 0
     width: 2px
     height: 100%
-    background: $red
+    background: #3F195B
   &::after
     transform: rotate(90deg)
     transform-origin: center

@@ -29,13 +29,6 @@ export default function SummerFestTickets() {
           href={ticketLink}
           target="_blank"
         >
-          {/*<Image*/}
-          {/*  src={imageUrl}*/}
-          {/*  alt={'decoration'}*/}
-          {/*  className={styles.image}*/}
-          {/*  width={672}*/}
-          {/*  height={404}*/}
-          {/*/>*/}
           <div className={`${styles.cardTitle} ${styles['early']}`}>
             EARLY BIRD
           </div>
@@ -55,13 +48,6 @@ export default function SummerFestTickets() {
           href={ticketLink}
           target="_blank"
         >
-          {/*<Image*/}
-          {/*  src={imageUrl}*/}
-          {/*  alt={'decoration'}*/}
-          {/*  className={`${styles.image} ${styles.revert}`}*/}
-          {/*  width={672}*/}
-          {/*  height={404}*/}
-          {/*/>*/}
           <div className={styles.cardTitle}>
             REGULAR
           </div>

@@ -55,12 +55,12 @@ const MarqueeTags = () => {
               >
                 {tag.text}
               </div>
-              <div>夏の</div>
+              <div>夏</div>
             </>
           ))}
         </div>
         <div className={styles.tagWrapper}>
-          {tags.map((tag, index) => (
+          {tags.map((tag) => (
             <>
               <div
                 key={`${tag.text}-second`}
@@ -68,9 +68,7 @@ const MarqueeTags = () => {
               >
                 {tag.text}
               </div>
-              {index !== tags.length - 1 && (
-                <div>夏の</div>
-              )}
+              <div>夏</div>
             </>
           ))}
         </div>

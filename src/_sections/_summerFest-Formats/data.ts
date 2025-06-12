@@ -43,12 +43,12 @@ export const eventFormats: Format[] = [
       {
         id: 'workshop-yandex',
         name: 'Workshop Yandex',
-        scene: 'Big Scene Open',
+        scene: 'Big Open Scene ',
       },
       {
         id: 'start-up-pitches',
         name: 'Start Up Section + Pitches',
-        scene: 'Small Scene Open',
+        scene: 'Small Open Scene ',
       },
       {
         id: 'job-fair',
@@ -69,8 +69,8 @@ export const eventFormats: Format[] = [
         note: 'Hookah availability may be limited or paid separately.',
       },
       {
-        id: 'pilaw',
-        name: 'Pilaw',
+        id: 'pilaf',
+        name: 'Pilaf',
         scene: 'Central Zone',
         description: 'Potential Serbian record for cooking pilaw for the largest number of people',
       },
@@ -98,7 +98,7 @@ export const eventFormats: Format[] = [
       {
         id: 'stand-up',
         name: 'Stand Up',
-        scene: 'Small Scene Open',
+        scene: 'Small Open Scene',
       },
     ],
   },

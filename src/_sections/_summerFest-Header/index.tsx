@@ -26,6 +26,9 @@ export default function SummerFestHeader() {
             vertical
           >
             <div>
+              by <Link href={'/'} className={styles.callToAction}>IT CONNECT</Link>
+            </div>
+            <div>
               16 August, Saturday, 12:00
             </div>
             <div>

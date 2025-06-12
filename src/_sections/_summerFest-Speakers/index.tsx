@@ -1,7 +1,8 @@
 import React from 'react';
-import { type Speaker, tracks } from '@/_sections/_summerFest-Speakers/data';
-import styles from './styles.module.sass';
 import Image from 'next/image';
+
+import { type Speaker, tracks } from './data';
+import styles from './styles.module.sass';
 
 export default function SummerFestSpeakers() {
 
