@@ -1,0 +1,61 @@
+$color: #3F195B6C
+.sponsorsPage
+  width: 100vw
+  display: flex
+  flex-flow: column
+  border-top: 40px solid black
+  border-bottom: 40px solid black
+  padding: 30px 0
+  font-family: 'Courier New', monospace
+
+.title
+  font-size: 60px
+  margin: 0 auto 30px
+  font-weight: bold
+
+.content
+  width: 100%
+  max-width: 1300px
+  margin: 0 auto
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 20px
+
+.sponsorCard
+  background: #26a9d8
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 20vw
+  height: 20vw
+  font-size: 20px
+  border: #3F195B 3px dashed
+  .sponsorTitle
+    font-size: 40px
+    text-align: center
+    font-weight: bold
+    color: black
+
+.sponsorLogo
+  filter: drop-shadow(3px 1px 0 $color) drop-shadow(1px 2px 0 $color)
+
+.chevronLine
+  width: 100px
+  height: 10px
+  background: repeating-linear-gradient(45deg, $color, $color 4px, transparent 4px, transparent 8px)
+  transform: skewX(-30deg)
+  opacity: 0.4
+
+.glyphColumn
+  font-family: 'Share Tech Mono', monospace
+  color: rgba(#3F195B, 0.3)
+  font-size: 1.5rem
+  writing-mode: vertical-rl
+  text-orientation: mixed
+  line-height: 1.5
+  user-select: none
+  opacity: 0.6
+  &::before
+    content: 'アイテック-74サイバー'

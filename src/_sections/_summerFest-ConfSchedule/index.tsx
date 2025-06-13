@@ -14,7 +14,7 @@ const ZONE_COORDS = {
   'Appendix':         { top: 40,  left: 373, width: 90, height: 33 },
   'Main Scene':       { top: 148, left: 500, width: 107, height: 33 },
   'Small Open Scene': { top: 237, left: 229, width: 158, height: 33 },
-  'Central Zone':    { top: 349, left: 252, width: 117, height: 33 },
+  'Central Zone':    { top: 348, left: 252, width: 117, height: 33 },
   'Small Scene':      { top: 470, left: 239, width: 106, height: 32 },
   'Entrance Zone':    { top: 590, left: 388, width: 102, height: 30 },
   'Big Open Scene':   { top: 556, left: 738, width: 139, height: 29 },
@@ -70,6 +70,7 @@ export default function SummerFestConfSchedule() {
   return (
     <div className={styles.confSchedule}>
       <div className={styles.title}>Schedule</div>
+      <div className={styles.verticalBar} />
       <div className={styles.contentWrapper}>
         <div>
           <div className={styles.mapWrapper}>
@@ -96,7 +97,7 @@ export default function SummerFestConfSchedule() {
                     position: 'absolute',
                     ...coords,
                     background: 'transparent',
-                    border: `4px dashed ${zone === activeZone ? 'black' :  'transparent'}`,
+                    border: zone === activeZone ? '2px dashed black' : 'none',
                     cursor: 'pointer',
                   }}
                   title={zone}

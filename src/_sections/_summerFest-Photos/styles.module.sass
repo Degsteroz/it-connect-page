@@ -1,0 +1,135 @@
+$colorPrimary: #26a9d8
+$colorBlack:   #000
+$colorWhite:   #fff
+$colorAccent:  #3F195B
+
+=glitchText($c1, $c2)
+  position: relative
+  color: $colorWhite
+  &::before, &::after
+    content: "We are waiting for you!"
+    position: absolute
+    top: 0
+    left: 0
+    clip: rect(0, 9999px, 0, 0)
+    animation: glitchAnim 2s infinite
+  &::before
+    left: 2px
+    text-shadow: -2px 0 $c1
+  &::after
+    left: -2px
+    text-shadow: -2px 0 $c2
+    animation-delay: 1s
+
+@keyframes glitchAnim
+  0%,100%
+    clip: rect(0,9999px,0,0)
+  10%
+    clip: rect(10px,9999px,50px,0)
+  20%
+    clip: rect(30px,9999px,60px,0)
+  30%
+    clip: rect(50px,9999px,80px,0)
+  40%
+    clip: rect(70px,9999px,100px,0)
+  50%
+    clip: rect(30px,9999px,40px,0)
+  60%
+    clip: rect(10px,9999px,30px,0)
+  70%
+    clip: rect(60px,9999px,90px,0)
+  80%
+    clip: rect(20px,9999px,50px,0)
+  90%
+    clip: rect(40px,9999px,70px,0)
+
+.photosPage
+  width: 100vw
+  position: relative
+  font-family: 'Courier New', monospace
+
+.photosWrapper
+  position: sticky
+  top: 2vw
+  width: 100vw
+
+.photos
+  display: flex
+  gap: 20px
+  width: fit-content
+  height: fit-content
+  padding-left: 10vw
+
+.photo
+  flex: 0 0 auto
+  height: 90vh
+  width: auto
+  padding: 20px
+  background: $colorPrimary
+
+.inviteCard
+  height: 90vh
+  width: 40vw
+  margin-right: 30vw
+  border: #3F195B 2px solid
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  position: relative
+  &:after
+    content: '▽ ▽ ▽ ▽'
+    font-size: 60px
+    position: absolute
+    bottom: 30px
+    right: 50%
+    transform: translateX(50%)
+    opacity: 0.4
+    color: #00D6E7
+    animation: blink 1s linear infinite
+  .cardTitle
+    font-size: 2.5rem
+    position: relative
+    font-weight: bold
+    .sign
+      animation: blink 1s ease infinite
+
+  .cardSubtitle
+    font-family: 'Courier New', monospace
+    font-size: 0.8rem
+    color: $colorAccent
+    background-color: rgba($colorPrimary, 0.08)
+    border-left: 4px solid $colorAccent
+    padding: 0.25rem 0.5rem
+    text-transform: uppercase
+    letter-spacing: 1px
+
+.signalGraph
+  position: relative
+  height: 40px
+  width: 100%
+  background: linear-gradient(to right, transparent 80%, rgba($colorAccent, 0.2) 80%)
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    height: 2px
+    width: 100%
+    background: repeating-linear-gradient(90deg, $colorPrimary,$colorPrimary 2px,transparent 2px,transparent 4px)
+    animation: scrollSignal 3s linear infinite
+
+@keyframes scrollSignal
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-100%)
+
+@keyframes blink
+  from
+    opacity: 0
+    transition: none
+  to
+    opacity: 1
+    transition: none

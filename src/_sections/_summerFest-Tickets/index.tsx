@@ -5,8 +5,6 @@ import Link from 'next/link';
 import styles from './styles.module.sass';
 import { PayCircleOutlined } from '@ant-design/icons';
 
-const ticketLink = 'https://tic.rs/en/belgrade/events/parties-19/it-summer-fest-1369';
-
 export default function SummerFestTickets() {
   return (
     <div className={styles.ticketSection}>
@@ -24,11 +22,7 @@ export default function SummerFestTickets() {
         justify="center"
         className={styles.ticketCardWrapper}
       >
-        <Link
-          className={styles.ticketCard}
-          href={ticketLink}
-          target="_blank"
-        >
+        <div className={`${styles.ticketCard} ${styles.soldout}`}>
           <div className={`${styles.cardTitle} ${styles['early']}`}>
             EARLY BIRD
           </div>
@@ -41,12 +35,14 @@ export default function SummerFestTickets() {
             GET NOW!
           </div>
           <div className={styles.accent}>Limited to the first 200 tickets!</div>
-        </Link>
+        </div>
 
         <Link
           className={styles.ticketCard}
-          href={ticketLink}
           target="_blank"
+          href="#"
+          data-oblak-widget
+          data-event-id="dTRVwiFu"
         >
           <div className={styles.cardTitle}>
             REGULAR

@@ -66,6 +66,25 @@
   color: black
   font-family: 'Courier New', monospace
   position: relative
+  &.soldout
+    overflow: hidden
+    &:hover
+      transform: none
+    &:after
+      content: 'SOLD OUT'
+      position: absolute
+      top: 30%
+      left: -10%
+      width: 120%
+      height: 150px
+      background: #3F195B
+      color: #00D6E7
+      z-index: 4
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 80px
+      transform: rotate(-10deg)
   &:hover
     color: black
     background: #26a9d8
