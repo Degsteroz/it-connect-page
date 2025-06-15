@@ -227,12 +227,11 @@ export const tracks: Track[] = [
     description: 'UX/UI design, creative processes, and building user-centered experiences.',
     speakers: [
       {
-        name: 'TBA',
-        title: 'TBA',
-        country: 'TBA',
-        photo: 'https://avatars0.githubusercontent.com/u/10000000',
-        speech: 'TBA',
-        empty: true
+        name: 'Aleksandr Ustinov',
+        title: 'Founder "BeaversBrothers"',
+        country: 'Russia',
+        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1750010496/it-connect/IMG_8045_p4aee1.jpg',
+        speech: 'Branding Zvezdarska Šuma Park',
       },
       {
         name: 'TBA',
