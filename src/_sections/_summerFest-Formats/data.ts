@@ -72,7 +72,7 @@ export const eventFormats: Format[] = [
         id: 'pilaf',
         name: 'Pilaf',
         stage: 'Central Zone',
-        description: 'Potential Serbian record for cooking pilaw for the largest number of people',
+        description: 'Potential Serbian record for cooking pilaf for the largest number of people',
       },
       {
         id: 'rostilj',
