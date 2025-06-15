@@ -8,16 +8,10 @@ import { useViewPort } from '@/_hooks';
 import styles from './styles.module.sass';
 
 const PHOTOS = [
-  'summerFestPhotos/2025-06-09_20-24-18_39_ephcdj',
   'summerFestPhotos/2025-06-09_20-24-18_38_dl2lbg',
-  'summerFestPhotos/2025-06-09_20-24-18_36_aokch8',
-  'summerFestPhotos/2025-06-09_20-24-18_35_b6d5vn',
-  'summerFestPhotos/2025-06-09_20-24-18_17_poumoi',
   'summerFestPhotos/2025-06-09_20-24-18_13_nldvgu',
   'summerFestPhotos/2025-06-09_20-24-18_12_kamnzd',
   'summerFestPhotos/2025-06-09_20-24-18_28_ewjq7s',
-  'summerFestPhotos/2025-06-09_20-24-18_23_arhx0z',
-  'summerFestPhotos/2025-06-09_20-24-18_10_zjd9tu'
 ];
 
 let initialScrollPos: number | null = null;
