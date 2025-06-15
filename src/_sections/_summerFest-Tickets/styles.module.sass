@@ -15,6 +15,8 @@
     font-size: 70px
     margin-top: -40px
     opacity: 0.3
+    @media only screen and (max-width: 500px)
+      font-size: 25px
 
 .title
   font-size: 68px
@@ -37,17 +39,25 @@
     white-space: nowrap
     color: #26a9d8f1
     z-index: 1
+    @media only screen and (max-width: 500px)
+      font-size: 24px
+      top: 3px
+      opacity: 0.3
   @media only screen and (max-width: 500px)
-    font-size: 60px
-    width: 200px
+    width: 100%
     line-height: 1
+    text-align: left
+    align-items: center
+    font-size: 26px
+    gap: 5px
+    justify-content: space-between
 
 .subtitle
   font-size: 38px
   color: black
   margin-bottom: 40px
   @media only screen and (max-width: 500px)
-    font-size: 30px
+    font-size: 22px
 
 .ticketCardWrapper
   @media only screen and (max-width: 500px)
@@ -85,6 +95,8 @@
       justify-content: center
       font-size: 80px
       transform: rotate(-10deg)
+      @media only screen and (max-width: 500px)
+        font-size: 54px
   &:hover
     color: black
     background: #26a9d8
@@ -123,10 +135,11 @@
 
   @media only screen and (max-width: 500px)
     width: 90vw
-    height: fit-content
     margin: 20px 0
+    padding: 10px
+    height: 90vw
     .cardTitle
-      font-size: 30px
+      font-size: 40px
       margin-bottom: 10px
       position: relative
       z-index: 3

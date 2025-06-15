@@ -94,9 +94,12 @@ const EventCarousel = () => {
       return (
         <div className={styles.cardWrapper}>
           {eventCards.map(card => (
-            <div key={card.key} style={{
-              width: 'fit-content'
-            }}>
+            <div
+              key={card.key}
+              style={{
+                width: 'fit-content'
+              }}
+            >
               <Card
                 className={styles.card}
                 bordered={false}

@@ -3,6 +3,28 @@
   min-height: 100vh
   padding: 30px 0
   position: relative
+  @media only screen and (max-width: 500px)
+    overflow: unset
+
+.buttonsWrapper
+  display: flex
+  overflow-x: scroll
+  gap: 10px
+  position: sticky
+  top: 77px
+  background: white
+  z-index: 10
+  padding: 0 10px 10px
+.button
+  background: #00D6E7
+  color: white
+  font-size: 18px
+  flex: 0 0 auto
+  padding: 5px 10px
+  &.active
+    border: #00D6E7 1px solid
+    color: #00D6E7
+
 
 .contentWrapper
   display: flex
@@ -10,6 +32,8 @@
   max-width: 90vw
   margin: 0 auto
   justify-content: space-between
+  @media only screen and (max-width: 500px)
+    align-items: center
 
 .currentStageBlock
   display: flex
@@ -57,6 +81,13 @@
     color: rgba(63, 25, 91, 0.14)
     background: #00D6E7
     z-index: -1
+  @media only screen and (max-width: 500px)
+    position: sticky
+    top: 0
+    background: white
+    z-index: 10
+    width: 100%
+
 
 .timeline
   flex: 1 1 50%
@@ -64,6 +95,9 @@
   align-items: center
   height: 100%
   max-width: 600px
+  @media only screen and (max-width: 500px)
+    flex: 0 0 auto
+    width: 90vw
 
 .label
   font-size: 14px
@@ -79,6 +113,13 @@
   .labelStage
     font-size: 16px
     font-weight: bold
+
+  @media only screen and (max-width: 500px)
+    flex-direction: column
+    gap: 3px
+    text-align: left
+    align-items: flex-start
+    width: fit-content
 
 .mapWrapper
   position: sticky

@@ -15,8 +15,8 @@ $blue: #00D6E7
   align-items: center
   justify-content: center
   @media only screen and (max-width: 500px)
-    padding: 0 20px
-    max-height: 700px
+    padding: 0 20px 60px
+    min-height: 790px
 
 .summerFestHeaderTextBlock
   text-align: left
@@ -25,6 +25,10 @@ $blue: #00D6E7
   color: black
   display: flex
   gap: 30px
+  @media only screen and (max-width: 500px)
+    flex-flow: column
+    padding-left: 0
+    width: 100%
   .japan
     display: flex
     justify-content: center
@@ -35,6 +39,8 @@ $blue: #00D6E7
     border: 10px solid black
     width: 300px
     height: 250px
+    @media only screen and (max-width: 500px)
+      margin: 0 auto
   .text
     display: flex
     flex-direction: column
@@ -45,6 +51,7 @@ $blue: #00D6E7
 
     @media only screen and (max-width: 500px)
       font-size: 60px
+
     &:after
       content: ""
       position: absolute
@@ -58,11 +65,14 @@ $blue: #00D6E7
       @media only screen and (max-width: 500px)
         top: 20px
         height: 200px
+        width: 70vw
+        left: 0
 .info
   font-size: 40px
   font-family: var(--font-poppins), sans-serif
   @media only screen and (max-width: 500px)
     font-size: 25px
+    gap: 10px
 
 .callToAction
   display: inline-flex
@@ -78,10 +88,14 @@ $blue: #00D6E7
     color: #26a9d8
 
   @media only screen and (max-width: 500px)
-    font-size: 25px
-    width: fit-content
+    font-size: 18px
+    width: 100%
     white-space: nowrap
     bottom: 30px
+    :global(.ant-flex)
+      gap: 0 !important
+      justify-content: space-between
+      width: 100%
 
 
 .tickerWrapper
@@ -124,6 +138,8 @@ $blue: #00D6E7
   pointer-events: none
   font-family: 'Courier New', monospace
   color: $black
+  @media only screen and (max-width: 500px)
+    top: 5px
 
 .stamp
   font-size: 0.8rem
@@ -165,6 +181,7 @@ $blue: #00D6E7
   &::after
     transform: rotate(90deg)
     transform-origin: center
+
 .jpLabel
   position: absolute
   top: 200px
@@ -173,3 +190,5 @@ $blue: #00D6E7
   transform: rotate(-90deg)
   color: $accent
   font-family: 'Noto Sans JP', sans-serif
+  @media only screen and (max-width: 500px)
+    top: 155px

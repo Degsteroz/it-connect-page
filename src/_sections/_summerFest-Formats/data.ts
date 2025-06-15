@@ -3,7 +3,7 @@ export type FormatCategory = 'Food Zone' | 'Tech Zone' | 'Entertainment';
 export interface Activity {
   id: string;
   name: string;
-  scene: string;
+  stage: string;
   description?: string;
   note?: string;
 }
@@ -22,38 +22,38 @@ export const eventFormats: Format[] = [
     activities: [
       {
         id: 'talks-6-speakers-big-open',
-        name: 'Talks - 6 Speakers (Big Open Scene)',
-        scene: 'Big Open Scene',
+        name: 'Talks - 6 Speakers (Big Open Stage)',
+        stage: 'Big Open Stage',
       },
       {
         id: 'talks-6-speakers-main',
-        name: 'Talks - 6 Speakers (Main Scene)',
-        scene: 'Main Scene',
+        name: 'Talks - 6 Speakers (Main Stage)',
+        stage: 'Main Stage',
       },
       {
         id: 'talks-6-speakers-small',
-        name: 'Talks - 6 Speakers (Small Scene)',
-        scene: 'Small Scene',
+        name: 'Talks - 6 Speakers (Small Stage)',
+        stage: 'Small Stage',
       },
       {
         id: 'open-talk',
         name: 'Open Talk',
-        scene: 'Big Open Scene',
+        stage: 'Big Open Stage',
       },
       {
         id: 'workshop-yandex',
         name: 'Workshop Yandex',
-        scene: 'Big Open Scene ',
+        stage: 'Big Open Stage ',
       },
       {
         id: 'start-up-pitches',
         name: 'Start Up Section + Pitches',
-        scene: 'Small Open Scene ',
+        stage: 'Small Open Stage ',
       },
       {
         id: 'job-fair',
         name: 'Job Fair',
-        scene: 'Entrance Zone',
+        stage: 'Entrance Zone',
       },
     ],
   },
@@ -65,19 +65,19 @@ export const eventFormats: Format[] = [
       {
         id: 'hookah-place',
         name: 'Hookah Place',
-        scene: 'Appendix',
+        stage: 'Appendix',
         note: 'Hookah availability may be limited or paid separately.',
       },
       {
         id: 'pilaf',
         name: 'Pilaf',
-        scene: 'Central Zone',
+        stage: 'Central Zone',
         description: 'Potential Serbian record for cooking pilaw for the largest number of people',
       },
       {
         id: 'rostilj',
         name: 'Rostilj',
-        scene: 'Central Zone',
+        stage: 'Central Zone',
       },
     ],
   },
@@ -88,17 +88,17 @@ export const eventFormats: Format[] = [
       {
         id: 'live-music',
         name: 'Live Music',
-        scene: 'Main Scene',
+        stage: 'Main Stage',
       },
       {
         id: 'afterparty-dj',
         name: 'Afterparty with DJ',
-        scene: 'Main Scene',
+        stage: 'Main Stage',
       },
       {
         id: 'stand-up',
         name: 'Stand Up',
-        scene: 'Small Open Scene',
+        stage: 'Small Open Stage',
       },
     ],
   },

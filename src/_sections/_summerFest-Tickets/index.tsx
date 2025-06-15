@@ -28,7 +28,7 @@ export default function SummerFestTickets() {
           </div>
 
           <div className={styles.price}>
-            5000 rsd
+            43€
           </div>
 
           <div className={styles.label}>
@@ -49,7 +49,7 @@ export default function SummerFestTickets() {
           </div>
 
           <div className={styles.price}>
-            6000 rsd
+            52€
           </div>
 
           <div className={styles.label}>

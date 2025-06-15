@@ -30,7 +30,7 @@ export default function SummerFestFormats() {
           <li key={activity.id} className={styles.activityItem}>
             <h3 className={styles.activityName}>{activity.name}</h3>
             <p className={styles.activityScene}>
-              <strong>Zone:</strong> {activity.scene}
+              <strong>Zone:</strong> {activity.stage}
             </p>
             {activity.description && (
               <p className={styles.activityDescription}>{activity.description}</p>
@@ -47,7 +47,6 @@ export default function SummerFestFormats() {
   ));
   return (
     <section className={styles.container}>
-
       <h1 className={styles.title}>
         <div className={styles.cyberGrid}>
           ▶▶Event Formats Overview◢

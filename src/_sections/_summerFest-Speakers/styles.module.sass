@@ -31,6 +31,8 @@
   gap: 20px
   justify-content: center
   padding: 2rem
+  @media only screen and (max-width: 500px)
+    padding: 0
 
 .trackCard
   flex: 0 0 40%
@@ -43,6 +45,8 @@
   gap: 1rem
   font-family: 'Courier New', monospace
   color: black
+  @media only screen and (max-width: 500px)
+    width: 100%
 
 .trackTitle
   font-size: 1.1rem
@@ -121,3 +125,22 @@
 .speakerCountry
   font-size: 0.75rem
   color: #666
+
+
+.tracksButtons
+  display: flex
+  gap: 10px
+  width: 100%
+  overflow-x: auto
+  padding-bottom: 10px
+  margin-bottom: 20px
+.trackButton
+  padding: 5px 10px
+  background: #26a9d8
+  color: white
+  flex: 0 0 auto
+  min-width: 100px
+  &.active
+    background: white
+    border: #26a9d8 solid 1px
+    color: #26a9d8

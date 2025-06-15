@@ -21,6 +21,8 @@ $color: #3F195B6C
   align-items: center
   justify-content: center
   gap: 20px
+  @media only screen and (max-width: 500px)
+    flex-flow: column
 
 .sponsorCard
   background: #26a9d8
@@ -37,6 +39,9 @@ $color: #3F195B6C
     text-align: center
     font-weight: bold
     color: black
+  @media only screen and (max-width: 500px)
+    width: 90vw
+    height: 90vw
 
 .sponsorLogo
   filter: drop-shadow(3px 1px 0 $color) drop-shadow(1px 2px 0 $color)
@@ -59,3 +64,6 @@ $color: #3F195B6C
   opacity: 0.6
   &::before
     content: 'アイテック-74サイバー'
+  @media only screen and (max-width: 500px)
+    writing-mode: lr
+    font-size: 1rem

@@ -1,6 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { Tag } from 'antd';
+import React from 'react';
 
 import { useViewPort } from '@/_hooks';
 
@@ -14,30 +13,23 @@ const tags = [
   { text: 'tech expo zone', color: 'magenta' },
   { text: 'networking', color: 'cyan' },
   { text: 'activities', color: 'lime' },
+  { text: '16.08.2025', color: 'geekblue' },
   { text: 'stand-up comedy', color: 'volcano' },
-  { text: '16.08.2025', color: 'geekblue' }
 ];
 
 const MarqueeTags = () => {
   const { isMobile } = useViewPort();
-  const [tagWidth, setTagWidth] = useState(100);
-  useEffect(() => {
-    if (isMobile) return;
-    setTagWidth(window.innerWidth / (tags.length));
-  }, [isMobile]);
 
   if (isMobile) {
     return (
       <div className={styles.tagWrapper}>
         {tags.map((tag) => (
-          <Tag
+          <div
             key={tag.text}
             className={styles.tag}
-            color={tag.color}
-            style={{ minWidth: isMobile ? 'auto' : tagWidth }}
           >
             {tag.text}
-          </Tag>
+          </div>
         ))}
       </div>
     );

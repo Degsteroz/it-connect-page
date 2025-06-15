@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 import logo from '@/_assets/headerSection/backgroundLogo.svg';
 
@@ -28,6 +29,27 @@ export default function SummerFest() {
       <script
         src="https://widget.oblakkarte.rs/widget.js"
         async data-organizer-public-token="Iqi7CCFo"
+      />
+      <Script
+        id="yandex-metrika"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(m,e,t,r,i,k,a){
+              m[i]=m[i]||function(){ (m[i].a=m[i].a||[]).push(arguments) };
+              m[i].l=1*new Date();
+              k=e.createElement(t), a=e.getElementsByTagName(t)[0];
+              k.async=1; k.src=r; a.parentNode.insertBefore(k,a)
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102652008, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true
+            });
+          `,
+        }}
       />
       <Image
         src={logo}
