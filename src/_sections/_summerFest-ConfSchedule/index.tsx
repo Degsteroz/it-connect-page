@@ -85,7 +85,7 @@ export default function SummerFestConfSchedule() {
             >
               {key}
               {key === activeZone && (
-                <CloseOutlined onClick={() => setActiveZone(null)} />
+                <CloseOutlined />
               )}
             </div>
           ))}
