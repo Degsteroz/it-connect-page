@@ -47,7 +47,7 @@ const MarqueeTags = () => {
               >
                 {tag.text}
               </div>
-              <div>夏</div>
+              <div key={`${tag.text}-sign`}>夏</div>
             </>
           ))}
         </div>
@@ -60,7 +60,7 @@ const MarqueeTags = () => {
               >
                 {tag.text}
               </div>
-              <div>夏</div>
+              <div key={`${tag.text}-secondSign`}>夏</div>
             </>
           ))}
         </div>

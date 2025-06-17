@@ -13,6 +13,8 @@ interface Track {
   speakers: Speaker[]
 }
 
+const baseUrl = 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749588055/it-connect/';
+
 export const tracks: Track[] = [
   {
     title: 'QA',
@@ -111,7 +113,7 @@ export const tracks: Track[] = [
         name: 'Artem Dubinin',
         title: 'Founder of Mighty.',
         country: 'Russia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749588055/it-connect/IMG_3851_ktiffb.jpg',
+        photo: baseUrl + 'IMG_3851_ktiffb.jpg',
         speech: 'Will GameFi / NFTs make a comeback?',
       },
       {
@@ -137,12 +139,11 @@ export const tracks: Track[] = [
     description: 'Building from scratch, product-market fit, growth, and innovation.',
     speakers: [
       {
-        name: 'TBA',
-        title: 'TBA',
-        country: 'TBA',
-        photo: 'https://avatars0.githubusercontent.com/u/10000000',
-        speech: 'TBA',
-        empty: true
+        name: 'Daria Vlaskina',
+        title: 'Co-founder of theLinkSocial',
+        country: 'Russia',
+        photo: baseUrl + 'IMG_8638_dpkmxu.jpg',
+        speech: 'LinkedIn for B2B: How to Attract Clients, Build Trust, and Scale Strategy Through Personal Profiles',
       },
       {
         name: 'TBA',
@@ -167,12 +168,11 @@ export const tracks: Track[] = [
     description: 'Communication, leadership, teamwork, and personal growth in tech.',
     speakers: [
       {
-        name: 'TBA',
-        title: 'TBA',
-        country: 'TBA',
-        photo: 'https://avatars0.githubusercontent.com/u/10000000',
-        speech: 'TBA',
-        empty: true
+        name: 'Dmitrii Ilenkov',
+        title: 'PhD, PMP, P3.express Practitioner. Founder "pmclub"',
+        country: 'Russia',
+        photo: baseUrl + 'IMG_5859_h0c3pd.jpg',
+        speech: 'How to Give Feedback Without Losing Friends',
       },
       {
         name: 'TBA',
@@ -230,7 +230,7 @@ export const tracks: Track[] = [
         name: 'Aleksandr Ustinov',
         title: 'Founder "BeaversBrothers"',
         country: 'Russia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1750010496/it-connect/IMG_8045_p4aee1.jpg',
+        photo: baseUrl + 'IMG_8045_p4aee1.jpg',
         speech: 'Branding Zvezdarska Šuma Park',
       },
       {
@@ -259,14 +259,14 @@ export const tracks: Track[] = [
         name: 'Nodar Jintcharadze',
         title: 'Agile Coach at TBC Bank',
         country: 'Georgia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749586468/it-connect/DSCF8360_cchslr.png',
+        photo: baseUrl + 'DSCF8360_cchslr.png',
         speech: 'Finding Balance Between Standardization and Customization During Agile Transformations'
       },
       {
         name: 'Anastasia Abrashitova',
         title: 'Head of Repository Tools Service, Yandex Infrastructure',
         country: 'Russia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749676205/it-connect/orig_jozjeq.png',
+        photo: baseUrl + 'orig_jozjeq.png',
         speech: 'I\'m a team lead. Who needs me?',
       },
       {
@@ -287,14 +287,14 @@ export const tracks: Track[] = [
         name: 'Marko Milojkovic',
         title: 'Eterna Creative Founder',
         country: 'Serbia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749587058/it-connect/IMAGE_2025-06-10_22_24_14_ficqxm.jpg',
+        photo: baseUrl + 'IMAGE_2025-06-10_22_24_14_ficqxm.jpg',
         speech: 'From idea to MVP in 60 days (with AI & no-code)'
       },
       {
         name: 'Konstantine Kevlishvili',
         title: 'Agile Coach, Product Owner and Project Manager',
         country: 'Georgia',
-        photo: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_376/v1749588952/it-connect/Agile_Coach_you6ih.jpg',
+        photo: baseUrl + 'Agile_Coach_you6ih.jpg',
         speech: 'AI Productivity or Brainfog? Practical Survival Guide for Project Managers',
       },
       {

@@ -9,7 +9,7 @@ import styles from './styles.module.sass';
 
 const imageId = 'https://res.cloudinary.com/dtecpsig5/image/upload/v1746700695/2025-05-08_12.37.35_zyuhs3.jpg';
 const mobileImageId = 'https://res.cloudinary.com/dtecpsig5/image/upload/v1747403284/it-connect/2025-05-16_15.47.18_jvmcqk.jpg';
-const ticketLink = 'https://tic.rs/en/belgrade/events/parties-19/it-summer-fest-1369';
+const ticketLink = '/summer-fest';
 
 export default function SummerFestSection() {
   const { isMobile } = useViewPort();
