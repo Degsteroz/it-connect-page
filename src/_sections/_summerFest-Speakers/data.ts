@@ -264,10 +264,10 @@ export const tracks: Track[] = [
       },
       {
         name: 'Anastasia Abrashitova',
-        title: 'Head of Repository Tools Service, Yandex Infrastructure',
+        title: 'Head of Devtools',
         country: 'Russia',
-        photo: baseUrl + 'orig_jozjeq.png',
-        speech: 'I\'m a team lead. Who needs me?',
+        photo: baseUrl + 'square_y8vd1e',
+        speech: 'Drop everything and play games!',
       },
       {
         name: 'TBA',
