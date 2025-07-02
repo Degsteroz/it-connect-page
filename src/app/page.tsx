@@ -12,7 +12,6 @@ import ClosestEventSection from '@/_sections/closestEventSection';
 import ImpactSection from '@/_sections/impactSection';
 import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
-import SummerFestSection from '@/_sections/summerFestSection';
 
 import styles from './page.module.css';
 import MobileNavigation from '@/_sections/_mobileNavigation';
@@ -24,10 +23,6 @@ export default function Home() {
       <div className={styles.page}>
         <NavigationSection/>
         <HeaderSection/>
-
-        <div className={styles.centered}>
-          <SummerFestSection />
-        </div>
         <div id="events" />
         <EventsSection />
 
