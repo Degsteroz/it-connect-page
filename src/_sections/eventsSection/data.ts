@@ -32,6 +32,122 @@ export type Network = {
 
 export const events: (Meetup | Network)[] = [
   {
+    title: 'IT Conect Reality Check',
+    date: '06.12.2025',
+    statistic: {
+      speakers: 3,
+      organizers: 6,
+      participants: 50,
+      duration: 4
+    },
+    tags: [],
+    topicList: [
+      'Гемблификация против геймификации: игра как инструмент контроля',
+      'Логи, метрики, алерты - как понять, что происходит в проекте и не утонуть в уведомлениях',
+      'IdeaOps: why every request is a company asset in product development'
+    ],
+    link: '',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1767185018/it-connect/921A4340_resized_fy0ro3.jpg'
+  },
+  {
+    title: 'Aipocalypse Halloween Party',
+    date: '31.10.2025',
+    description: [
+      '— Страшные истории',
+      '— Мафия Aipocalypse Edition',
+      '— Конкурсы: мумии, гадания, зельеваренье,',
+      '— Зона макияжа',
+      '— Конкурс костюмов',
+      '— DJ & заколдованный бар'
+    ],
+    tags: ['IT Connect', 'StartIT', 'Serbian QA Hub'],
+    link: 'https://disk.yandex.ru/d/tdeVf_ztaFsEbQ',
+    _type: EventsTypes.NETWORK,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_1261/v1767185084/it-connect/KLO_4090_pwweav.jpg'
+  },
+  {
+    title: 'IT Connect birthday',
+    date: '20.09.2025',
+    description: [
+      'IT CONNECT COMMUNITY BIRTHDAY'
+    ],
+    tags: [],
+    link: '',
+    _type: EventsTypes.NETWORK,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_1261/v1767185084/it-connect/KLO_8905_yk1qvn.jpg'
+  },
+  {
+    title: 'Antifest',
+    date: '16.08.2025',
+    description: [
+      'Funeral of Summer Fest by IT CONNECT'
+    ],
+    tags: [],
+    link: '',
+    _type: EventsTypes.NETWORK,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_1261/v1767185084/it-connect/KLO_1471_j7pan6.jpg'
+  },
+  {
+    title: 'IT Connect x Heap Space',
+    date: '26.06.2025',
+    statistic: {
+      speakers: 3,
+      organizers: 13,
+      participants: 60,
+      duration: 4
+    },
+    tags: [],
+    topicList: [
+      'Interviews in tech are broken… or are they? -> Alex Svetkin, Principal Engineer/Microsoft',
+      'Know what youre managing: First steps to Functional Decomposition -> Sergey Fedorov, Chief Product Officer/BoardMaps',
+      'TWas ist Computer Grafik -> Igor Spasić, Software engineer/HeapSpace founder'
+    ],
+    link: 'https://disk.yandex.ru/d/opE9t4KxpgT99Q',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_1261/v1767185084/it-connect/KLO_2957_syggtz.jpg'
+  },
+  {
+    title: 'Inside IT Meetup',
+    date: '14.06.2025',
+    statistic: {
+      speakers: 3,
+      organizers: 15,
+      participants: 65,
+      duration: 4
+    },
+    tags: [],
+    description: ['Visual Thinking, Video Analytics, and Agile Truths'],
+    topicList: [
+      'Maxim Podstrechny, Python Developer: "Video Analytics for Beginners (or How Big Brother Watches Us)"',
+      'Ivan Pushchin, Solutions Architect: "Agile is Dead, or How to Implement Large IT Projects in Agile Organizations Without Going Crazy"',
+      'Albert Fakhrutdinov, Product Owner, PO, SA: "Visual Thinking. No Diagram – No Deal"'
+    ],
+    link: 'https://drive.google.com/drive/folders/1rlSCQjMjRA4wP8ivsBJUzvnUCdf05Me2',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/c_scale,w_1261/v1767185084/it-connect/KLO_2885_ldecef.jpg'
+  },
+  {
+    title: 'Geospatial Community of Serbia Meetup',
+    date: '22.05.2025',
+    statistic: {
+      speakers: 4,
+      organizers: 15,
+      participants: 70,
+      duration: 4
+    },
+    tags: [],
+    topicList: [
+      'How User Generated Content Helps Improve Discovery of New Places',
+      'Cybersecurity in Geospatial Products: How to Secure Your Tooling From Supply Chain and Phishing Attacks',
+      'Empowering User Communities to Shape the Future of Places',
+      'Using Delivery Analytics to Build and Scale Out-Of-Home Networks'
+    ],
+    link: '',
+    _type: EventsTypes.MEETUP,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1767185478/it-connect/921A1445_resized_momsqt.jpg'
+  },
+  {
     title: 'Pixel Battle',
     date: '27.04.2025',
     statistic: {
