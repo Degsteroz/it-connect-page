@@ -12,10 +12,11 @@ import ClosestEventSection from '@/_sections/closestEventSection';
 import ImpactSection from '@/_sections/impactSection';
 import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
-import HighlightsSection from '@/_sections/highlightsSection';
+// import HighlightsSection from '@/_sections/highlightsSection';
+import MobileNavigation from '@/_sections/_mobileNavigation';
+import TedxSection from '@/_sections/_tedxSection';
 
 import styles from './page.module.css';
-import MobileNavigation from '@/_sections/_mobileNavigation';
 
 export default function Home() {
 
@@ -24,7 +25,8 @@ export default function Home() {
       <div className={styles.page}>
         <NavigationSection/>
         <HeaderSection/>
-        <HighlightsSection />
+        {/*<HighlightsSection />*/}
+        <TedxSection />
         <div id="events" />
         <EventsSection />
 

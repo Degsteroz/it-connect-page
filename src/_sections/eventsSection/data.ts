@@ -32,6 +32,22 @@ export type Network = {
 
 export const events: (Meetup | Network)[] = [
   {
+    title: 'Trash TV Party',
+    date: '31.10.2025',
+    description: [
+      'Интуиция',
+      'Конкурс коллажей',
+      'Битва Шаманов',
+      'Зов Джунглей',
+      'Угадай Мелодию',
+      'СВОЯ ИГРА'
+    ],
+    tags: ['IT Connect', 'StartIT', 'Serbian QA Hub'],
+    link: 'https://disk.yandex.ru/d/UxvqV7cGtnpSJQ',
+    _type: EventsTypes.NETWORK,
+    image: 'https://res.cloudinary.com/dtecpsig5/image/upload/v1777155217/it-connect/6vAU76_zSRIwzECBR98A3KrSDGzgMfZIGDkRcOvD74nMPuQENLWB5_34oQAlXUCnlcsZHea4AT15uwn5FG5vlA_3D_3D_e2pkww.jpg'
+  },
+  {
     title: 'IT Conect Reality Check',
     date: '06.12.2025',
     statistic: {
@@ -54,12 +70,12 @@ export const events: (Meetup | Network)[] = [
     title: 'Aipocalypse Halloween Party',
     date: '31.10.2025',
     description: [
-      '— Страшные истории',
-      '— Мафия Aipocalypse Edition',
-      '— Конкурсы: мумии, гадания, зельеваренье,',
-      '— Зона макияжа',
-      '— Конкурс костюмов',
-      '— DJ & заколдованный бар'
+      'Страшные истории',
+      'Мафия Aipocalypse Edition',
+      'Конкурсы: мумии, гадания, зельеваренье,',
+      'Зона макияжа',
+      'Конкурс костюмов',
+      'DJ & заколдованный бар'
     ],
     tags: ['IT Connect', 'StartIT', 'Serbian QA Hub'],
     link: 'https://disk.yandex.ru/d/tdeVf_ztaFsEbQ',
