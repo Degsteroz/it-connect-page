@@ -32,7 +32,7 @@ export default function TedxSection() {
       {image}
       <div className={styles.ctaBlock}>
         <div className={styles.actions}>
-          <a href="https://forms.gle/QvgRHeQtN33Ua5ot5" className={styles.primaryBtn}>
+          <a href="https://bit.ly/TEDxSavski-Venac" className={styles.primaryBtn}>
             BECOME A SPEAKER
           </a>
         </div>
