@@ -1,61 +1,39 @@
-'use client';
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 
 import styles from './styles.module.sass';
-import { useViewPort } from '@/_hooks';
+
+const TEDX_SITE_URL = 'https://www.tedxsavskivenac.com/';
+const TEDX_TICKETS_URL = 'https://itconnect.tic.rs/ru/t79ylzzw';
+const TEDX_EVENT_ID = 't79ylzzw';
 
 export default function TedxSection() {
-  const { isMobile } = useViewPort();
-
-  const image = isMobile
-    ? (
-      <Image
-        className={styles.image}
-        src={'https://res.cloudinary.com/dtecpsig5/image/upload/v1777153782/it-connect-events/tedx_looking_for_speakers_stories_sk9f5r.png'}
-        alt=""
-        width="324"
-        height="522"
-      />
-    )
-    : (
-      <Image
-        className={styles.image}
-        src={'https://res.cloudinary.com/dtecpsig5/image/upload/v1777148886/it-connect-events/tedx_looking_for_speakers_linkedin_dkiv64.png'}
-        alt=""
-        width='900'
-        height='472'
-      />
-    );
   return (
-    <div className={styles.section}>
-      {image}
-      <div className={styles.ctaBlock}>
+    <section className={styles.section}>
+      <div className={styles.content}>
+        <div className={styles.title}>TedX Savski Venac</div>
+        <div className={styles.subtitle}>
+          October 10, 2026 · Startit Center, Belgrade
+        </div>
         <div className={styles.actions}>
-          <a href="https://bit.ly/TEDxSavski-Venac" className={styles.primaryBtn}>
-            BECOME A SPEAKER
-          </a>
-        </div>
-        <div className={styles.networks}>
           <a
-            href="https://www.linkedin.com/company/tedxsavskivenac/"
-            className={styles.socialBtn}
+            href={TEDX_SITE_URL}
+            className={styles.visitBtn}
             target="_blank"
             rel="noreferrer"
           >
-            LINKEDIN
+            Visit
           </a>
-          <a
-            href="https://www.instagram.com/tedxsavskivenac/"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.socialBtn}
+          <Link
+            href={TEDX_TICKETS_URL}
+            className={styles.buyBtn}
+            data-oblak-widget
+            data-event-id={TEDX_EVENT_ID}
           >
-            INSTAGRAM
-          </a>
+            Buy Tickets
+          </Link>
         </div>
-        <div className={styles.date}>October 10, 2026</div>
       </div>
-    </div>
+    </section>
   );
 }

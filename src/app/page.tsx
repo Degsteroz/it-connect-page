@@ -22,6 +22,11 @@ export default function Home() {
 
   return (
     <div>
+      <script
+        src="https://widget.oblakkarte.rs/widget.js"
+        async
+        data-organizer-public-token="Iqi7CCFo"
+      />
       <div className={styles.page}>
         <NavigationSection/>
         <HeaderSection/>
