@@ -19,6 +19,18 @@ export default function ModalCardContent({ event }: {event: Meetup | Network | n
       <h3 className={styles.content_title}>
         {event.title}
       </h3>
+      <Flex
+        style={{
+          margin: '10px 0'
+        }}
+        align="center"
+      >
+        {event.tags.map((tag) => (
+          <Tag key={tag} style={{
+            height: 'fit-content'
+          }}>{tag}</Tag>
+        ))}
+      </Flex>
 
       <div className={styles.date}>
         {event.date}
