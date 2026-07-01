@@ -8,7 +8,8 @@ import FooterSection from '@/_sections/footerSection';
 import FormatsSection from '@/_sections/formatsSection';
 import PartnersSection from '@/_sections/partnersSection';
 import EventsSection from '@/_sections/eventsSection';
-import ClosestEventSection from '@/_sections/closestEventSection';
+// import ClosestEventSection from '@/_sections/closestEventSection';
+import StandupFestSection from '@/_sections/standupFestSection';
 import ImpactSection from '@/_sections/impactSection';
 import HistorySignSection from '@/_sections/historySignSection';
 import SponsorsSection from '@/_sections/sponsorsSection';
@@ -37,7 +38,8 @@ export default function Home() {
 
         <div className={styles.centered}>
           <div id="closest-event" />
-          <ClosestEventSection />
+          {/* <ClosestEventSection /> — summer pause */}
+          <StandupFestSection />
           <ImpactSection />
           <div id="formats" />
           <FormatsSection />
