@@ -4,6 +4,7 @@ export interface SponsorCardData {
   preferences: string[];
   price: string;
   highlighted?: boolean;
+  variant?: 'tedx';
   decorateImage: 1 | 2
   link?: string;
 }
@@ -48,17 +49,17 @@ export const sponsorsSectionData: SponsorCardData[] = [
     decorateImage: 2
   },
   {
-    title: 'Festival Sponsorship',
-    description: 'Join our annual IT Connect Festival (1000+ attendees in 2025) as a sponsor. Showcase your company, engage with top talent, and boost brand visibility.',
+    title: 'TEDx Sponsorship',
+    description: 'Sponsor TEDx Savski Venac — October 10, 2026 at Startit Center, Belgrade. 100 seats for leaders and innovators.',
     preferences: [
-      'Speaking opportunities',
-      'Exhibition booths',
-      'Branding',
-      'Access to a recruitment fair'
+      'Exclusive audience of 100 decision-makers',
+      'Logo on the TEDx Talks YouTube channel',
+      'TED + IT Connect brand association',
+      'Bronze to Presenting Partner packages'
     ],
-    price: 'Pricing upon request',
-    link: 'https://buymeacoffee.com/itconnect/extras',
-    highlighted: true,
-    decorateImage: 1
-  }
+    price: 'From €500',
+    variant: 'tedx',
+    decorateImage: 1,
+    link: 'https://www.tedxsavskivenac.com/sponsors',
+  },
 ];

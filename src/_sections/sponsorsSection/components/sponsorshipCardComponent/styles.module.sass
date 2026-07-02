@@ -17,6 +17,10 @@
   background-color: #9ef1f5
   color: #1c1c1c
 
+.tedx
+  background: linear-gradient(135deg, #000 0%, #1a0005 50%, #ea0028 200%)
+  color: #fff
+
 .imageWrapper
   width: fit-content
   display: flex
@@ -24,7 +28,7 @@
   position: absolute
   top: 0
   right: 0
-  &.glow
+  &.glow, &.tedxGlow
     &:before
       content: ""
       position: absolute
@@ -34,9 +38,14 @@
       width: 218px
       height: 218px
       border-radius: 50%
-      background: #9311F5
       filter: blur(50px)
       z-index: 1
+  &.glow
+    &:before
+      background: #9311F5
+  &.tedxGlow
+    &:before
+      background: #ea0028
 
 .headerImage
   border-radius: 12px
@@ -81,3 +90,8 @@
   &.highlighted
     background: #2d0f4b
     color: white
+  &.tedxButton
+    background: #ea0028
+    color: #fff
+    &:hover
+      background: #c80022

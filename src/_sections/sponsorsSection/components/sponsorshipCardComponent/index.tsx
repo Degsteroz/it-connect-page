@@ -12,6 +12,7 @@ export interface SponsorCardProps {
   preferences: string[];
   price: string;
   highlighted?: boolean;
+  variant?: 'tedx';
   decorateImage: 1 | 2;
   link?: string;
 }
@@ -26,10 +27,17 @@ export default function SponsorshipCardComponent({
 }: {
   sponsorshipCard: SponsorCardProps;
 }) {
-  const { title, description, preferences, price, highlighted, decorateImage, link } = sponsorshipCard;
+  const { title, description, preferences, price, highlighted, variant, decorateImage, link } = sponsorshipCard;
+  const isTedx = variant === 'tedx';
+
   const getLinkContent = () => {
-    const buttonClassName = `${styles.button} ${highlighted ? styles.highlighted : ''}`;
+    const buttonClassName = [
+      styles.button,
+      highlighted && styles.highlighted,
+      isTedx && styles.tedxButton,
+    ].filter(Boolean).join(' ');
     const buttonLink = highlighted ? 'mailto:itconnectsocialnetworks@gmail.com' : link;
+
     return (
       <a
         href={buttonLink}
@@ -42,9 +50,21 @@ export default function SponsorshipCardComponent({
     );
   };
 
+  const cardClassName = [
+    styles.card,
+    highlighted && styles.highlighted,
+    isTedx && styles.tedx,
+  ].filter(Boolean).join(' ');
+
+  const imageWrapperClassName = [
+    styles.imageWrapper,
+    !highlighted && !isTedx && styles.glow,
+    isTedx && styles.tedxGlow,
+  ].filter(Boolean).join(' ');
+
   return (
-    <div className={`${styles.card} ${highlighted ? styles.highlighted : ''}`}>
-      <div className={`${styles.imageWrapper} ${highlighted ? '' : styles.glow}`}>
+    <div className={cardClassName}>
+      <div className={imageWrapperClassName}>
         <Image
           src={images[decorateImage]}
           alt={`${title} header visual`}
