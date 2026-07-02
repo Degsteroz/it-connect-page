@@ -30,7 +30,7 @@ export const sponsorsSectionData: SponsorCardData[] = [
       'Your logo on event creatives ',
       'Logo or QR code on attendee badges'
     ],
-    price: '€300–€500 ',
+    price: '€1000 ',
     link: 'https://buymeacoffee.com/itconnect/extras',
     decorateImage: 1,
   },
